@@ -1,0 +1,302 @@
+require('dotenv').config();
+
+const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
+const compression = require('compression');
+const morgan = require('morgan');
+const rateLimit = require('express-rate-limit');
+
+const config = require('./config');
+const { connectDatabase, isDatabaseConnected } = require('./config/database');
+const logger = require('./utils/logger');
+const eventBus = require('./utils/eventBus');
+const elasticsearchService = require('./services/elasticsearchService');
+const eventBusListener = require('./services/eventBusListener');
+
+const logsRouter = require('./routes/logs');
+const { apiKeyAuth, requestLogger } = require('./middleware/auth');
+
+
+// Swagger Documentation
+const { swaggerSpec, swaggerUi, swaggerUiOptions } = require('./config/swagger');
+const app = express();
+
+// Tracking variables
+let isShuttingDown = false;
+let healthStatus = {
+  mongodb: false,
+  elasticsearch: false,
+  rabbitmq: false
+};
+
+/**
+ * Middleware
+ */
+// Security headers
+app.use(helmet());
+
+// CORS
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || '*',
+  credentials: true
+}));
+
+// Compression
+app.use(compression());
+
+// Body parsers
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
+
+// Request logging with Morgan
+app.use(morgan(':method :url :status :response-time ms'));
+
+// Custom request logger
+app.use(requestLogger);
+
+// Rate limiting
+const limiter = rateLimit({
+  windowMs: config.RATE_LIMIT_WINDOW_MS,
+  max: config.RATE_LIMIT_MAX_REQUESTS,
+  message: 'Too many requests, please try again later',
+  standardHeaders: true,
+  legacyHeaders: false
+});
+
+app.use('/logs', limiter);
+
+// API Key Authentication
+app.use(apiKeyAuth);
+
+/**
+ * Routes
+ */
+
+/**
+ * Health Check Endpoint
+ */
+app.get('/health', (req, res) => {
+  if (isShuttingDown) {
+    return res.status(503).json({
+      status: 'shutting-down',
+      timestamp: new Date().toISOString()
+    });
+  }
+
+  const status = isDatabaseConnected() ? 'healthy' : 'unhealthy';
+
+  res.status(status === 'healthy' ? 200 : 503).json({
+    status,
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    mongodb: healthStatus.mongodb,
+    elasticsearch: healthStatus.elasticsearch,
+    rabbitmq: healthStatus.rabbitmq
+  });
+});
+
+/**
+ * Readiness Check Endpoint
+ */
+app.get('/ready', (req, res) => {
+  const isReady = isDatabaseConnected() && elasticsearchService.isConnected;
+
+  res.status(isReady ? 200 : 503).json({
+    ready: isReady,
+    timestamp: new Date().toISOString()
+  });
+});
+
+/**
+ * Metrics Endpoint
+ */
+app.get('/metrics', async (req, res) => {
+  try {
+    const esStats = await elasticsearchService.getIndexStats();
+    const eventBusStatus = eventBus.getStatus();
+    const eventBusListenerStatus = eventBusListener.getStatus();
+
+    res.json({
+      status: 'ok',
+      timestamp: new Date().toISOString(),
+      uptime: process.uptime(),
+      memory: process.memoryUsage(),
+      elasticsearch: esStats,
+      eventBus: eventBusStatus,
+      eventBusListener: eventBusListenerStatus
+    });
+  } catch (error) {
+    logger.error('Error getting metrics:', error);
+    res.status(500).json({
+      status: 'error',
+      message: 'Failed to get metrics',
+      error: error.message
+    });
+  }
+});
+
+/**
+ * Logs API Routes
+ */
+app.use('/logs', logsRouter);
+
+/**
+ * Info endpoint
+ */
+app.get('/info', (req, res) => {
+  res.json({
+    service: 'logger-service',
+    version: '1.0.0',
+    environment: config.NODE_ENV,
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString()
+  });
+});
+
+/**
+ * 404 Handler
+ */
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: 'Not found',
+    path: req.path
+  });
+});
+
+/**
+ * Error Handler
+ */
+app.use((err, req, res, next) => {
+  logger.error('Unhandled error:', err);
+
+  res.status(err.status || 500).json({
+    success: false,
+    message: err.message || 'Internal server error',
+    error: config.NODE_ENV === 'development' ? err.stack : undefined
+  });
+});
+
+/**
+ * Initialize services and start server
+ */
+async function initialize() {
+  try {
+    logger.info('Initializing Logger Service...');
+
+    // Connect to MongoDB
+    logger.info('Connecting to MongoDB...');
+    await connectDatabase();
+    healthStatus.mongodb = true;
+    logger.info('MongoDB connected');
+
+    // Connect to Elasticsearch
+    logger.info('Connecting to Elasticsearch...');
+    const esConnected = await elasticsearchService.connect();
+    if (esConnected) {
+      healthStatus.elasticsearch = true;
+      logger.info('Elasticsearch connected');
+    } else {
+      logger.warn('Elasticsearch connection failed, continuing without search capabilities');
+    }
+
+    // Connect to RabbitMQ and start event bus listener
+    logger.info('Connecting to RabbitMQ...');
+    const rbConnected = await eventBus.connect();
+    if (rbConnected) {
+      healthStatus.rabbitmq = true;
+      logger.info('RabbitMQ connected');
+
+      // Start listening to log events
+      await eventBusListener.start();
+      logger.info('Event bus listener started');
+    } else {
+      logger.warn('RabbitMQ connection failed, logs from event bus will not be received');
+    }
+
+    // Start HTTP server
+    const server = app.listen(config.PORT, () => {
+      logger.info(`Logger Service listening on port ${config.PORT}`);
+    });
+
+    // Graceful shutdown
+    process.on('SIGTERM', () => {
+      logger.info('SIGTERM received, shutting down gracefully...');
+      shutdown(server);
+    });
+
+    process.on('SIGINT', () => {
+      logger.info('SIGINT received, shutting down gracefully...');
+      shutdown(server);
+    });
+
+    // Health check interval
+    setInterval(async () => {
+      // Update MongoDB status
+      const { connectDatabase: dbConnected } = require('./config/database');
+      healthStatus.mongodb = isDatabaseConnected();
+
+      // Update Elasticsearch status
+      healthStatus.elasticsearch = elasticsearchService.isConnected;
+
+      // Update RabbitMQ status
+      healthStatus.rabbitmq = eventBus.isConnected;
+    }, config.HEALTH_CHECK_INTERVAL);
+
+  } catch (error) {
+    logger.error('Failed to initialize Logger Service:', error);
+    process.exit(1);
+  }
+}
+
+/**
+ * Graceful shutdown
+ */
+async function shutdown(server) {
+  if (isShuttingDown) return;
+  isShuttingDown = true;
+
+  logger.info('Starting graceful shutdown...');
+
+  // Stop accepting new connections
+  server.close(async () => {
+    logger.info('HTTP server closed');
+  });
+
+  // Set timeout for forced shutdown
+  const shutdownTimeout = setTimeout(() => {
+    logger.error('Shutdown timeout, forcing exit');
+    process.exit(1);
+  }, 30000); // 30 seconds
+
+  try {
+    // Close event bus listener
+    await eventBusListener.stop();
+
+    // Close Elasticsearch
+    await elasticsearchService.close();
+
+    // Close database connection
+    const { disconnectDatabase } = require('./config/database');
+    await disconnectDatabase();
+
+    clearTimeout(shutdownTimeout);
+    logger.info('Graceful shutdown completed');
+    process.exit(0);
+  } catch (error) {
+    logger.error('Error during shutdown:', error);
+    clearTimeout(shutdownTimeout);
+    process.exit(1);
+  }
+}
+
+// Start the service
+if (require.main === module) {
+  initialize().catch(error => {
+    logger.error('Initialization error:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = app;

@@ -1,0 +1,41 @@
+{
+  "name": "hometrip-websocket-gateway",
+  "version": "1.0.0",
+  "description": "WebSocket Gateway for HomeTrip microservices - Real-time communication with Socket.io",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "websocket",
+    "socket.io",
+    "real-time",
+    "microservices",
+    "hometrip"
+  ],
+  "author": "HomeTrip Team",
+  "license": "MIT",
+  "dependencies": {
+    "@socket.io/redis-adapter": "^8.3.0",
+    "amqplib": "^0.10.3",
+    "axios": "^1.6.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "events": "^3.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "redis": "^4.6.12",
+    "socket.io": "^4.7.2",
+    "socket.io-redis": "^6.1.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "supertest": "^6.3.3"
+  }
+}

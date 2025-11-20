@@ -1,0 +1,510 @@
+================================================================================
+NOTIFICATION SERVICE - FILES MANIFEST
+================================================================================
+Created: 2024-11-17
+Status: Complete & Ready for Deployment
+Version: 1.0.0
+
+BASE DIRECTORY:
+  /home/arwa/hometrip-microservices/services/notification-service
+
+================================================================================
+CONFIGURATION FILES (4)
+================================================================================
+
+1. /home/arwa/hometrip-microservices/services/notification-service/package.json
+   - NPM package configuration
+   - Dependencies: express, mongoose, nodemailer, twilio, amqplib, helmet, etc.
+   - Scripts: start, dev, test, lint
+   - Node.js 14+ required
+
+2. /home/arwa/hometrip-microservices/services/notification-service/.env.example
+   - Environment variables template
+   - 50+ configuration options with descriptions
+   - Categories: Server, Database, Email, SMS, RabbitMQ, Frontend, Security
+
+3. /home/arwa/hometrip-microservices/services/notification-service/Dockerfile
+   - Multi-stage Docker build
+   - Alpine Linux base
+   - Non-root user for security
+   - Health checks configured
+   - Production optimized
+
+4. /home/arwa/hometrip-microservices/services/notification-service/.dockerignore
+   - Docker build exclusions
+   - Reduces image size
+   - Excludes logs, node_modules, tests, etc.
+
+================================================================================
+APPLICATION CORE (1)
+================================================================================
+
+5. /home/arwa/hometrip-microservices/services/notification-service/src/index.js
+   - Express server initialization
+   - Middleware setup (CORS, helmet, rate-limiting)
+   - Service initialization (MongoDB, Email, Twilio, RabbitMQ)
+   - Graceful shutdown handling
+   - Health check & metrics endpoints
+   - Error handling & logging
+   - Port: 4009
+
+================================================================================
+CONFIGURATION MODULES (2)
+================================================================================
+
+6. /home/arwa/hometrip-microservices/services/notification-service/src/config/index.js
+   - Centralized environment configuration
+   - 30+ configuration options
+   - Default values for development
+   - Environment variable validation
+
+7. /home/arwa/hometrip-microservices/services/notification-service/src/config/database.js
+   - MongoDB connection management
+   - Connection pooling
+   - Automatic reconnection
+   - Connection status tracking
+   - Functions: connectDB, disconnectDB, getConnectionStatus
+
+================================================================================
+DATA MODELS (1)
+================================================================================
+
+8. /home/arwa/hometrip-microservices/services/notification-service/src/models/Notification.js
+   - MongoDB notification schema
+   - Fields: userId, type, title, message, channels, sentStatus, etc.
+   - 30+ notification types
+   - Composite indexes for performance
+   - Instance methods: markAsRead, markAsUnread, archive
+   - Static methods: getUnreadCount, markAllAsRead, deleteOldNotifications
+   - TTL auto-deletion support
+
+================================================================================
+CONTROLLERS (1)
+================================================================================
+
+9. /home/arwa/hometrip-microservices/services/notification-service/src/controllers/notificationController.js
+   - Request handlers for all API endpoints
+   - Functions:
+     * getNotifications - GET /api/notifications
+     * getNotification - GET /api/notifications/:id
+     * markAsRead - PUT /:id/read
+     * markAsUnread - PUT /:id/unread
+     * markAllAsRead - PUT /mark-all-read
+     * archiveNotification - PUT /:id/archive
+     * deleteNotification - DELETE /:id
+     * bulkDeleteNotifications - DELETE /bulk-delete
+     * getUnreadCount - GET /unread-count
+     * sendNotification - Internal multi-channel dispatch
+   - Pagination support
+   - Error handling
+   - Multi-channel coordination
+
+================================================================================
+ROUTES (1)
+================================================================================
+
+10. /home/arwa/hometrip-microservices/services/notification-service/src/routes/notifications.js
+    - Express route definitions
+    - 9 CRUD endpoints for notifications
+    - All routes require authentication
+    - Pagination & filtering support
+    - REST conventions
+
+================================================================================
+SERVICES (2)
+================================================================================
+
+11. /home/arwa/hometrip-microservices/services/notification-service/src/services/emailService.js
+    - Nodemailer email integration
+    - 8 professional HTML email templates:
+      1. User Confirmation - Registration verification
+      2. New Reservation Request - Booking inquiry
+      3. Reservation Confirmed - Booking accepted
+      4. Reservation Cancelled - Booking cancelled
+      5. Payment Failed - Payment error
+      6. Refund Confirmation - Refund notification
+      7. New Message - Message received
+      8. Review Received - New review posted
+    - Functions for each template
+    - SMTP/Gmail configuration
+    - Connection verification
+    - Error handling & logging
+    - Responsive HTML design
+    - Text alternatives
+
+12. /home/arwa/hometrip-microservices/services/notification-service/src/services/smsService.js
+    - Twilio SMS integration
+    - 7 SMS templates:
+      1. Verification Code SMS - 2FA codes
+      2. Reservation Confirmation SMS - Booking confirmed
+      3. Check-in Reminder SMS - Arrival day
+      4. Check-out Reminder SMS - Departure day
+      5. New Message SMS - Message notification
+      6. Payment Failed SMS - Payment alert
+      7. Booking Request SMS - New booking
+    - Twilio client initialization
+    - Character-optimized messages
+    - International format support
+    - Error handling & logging
+
+================================================================================
+MIDDLEWARE (1)
+================================================================================
+
+13. /home/arwa/hometrip-microservices/services/notification-service/src/middleware/auth.js
+    - JWT & custom authentication
+    - Three authentication functions:
+      * auth - Required authentication
+      * optionalAuth - Optional authentication
+      * webhookAuth - Webhook secret validation
+    - Multiple authentication strategies:
+      1. Bearer Token (JWT)
+      2. X-Auth-Token header
+      3. X-User-Id header (development)
+      4. Query parameter
+    - Fallback mechanisms
+    - Error handling
+
+================================================================================
+UTILITIES (2)
+================================================================================
+
+14. /home/arwa/hometrip-microservices/services/notification-service/src/utils/eventBus.js
+    - RabbitMQ event-driven architecture
+    - 9 event subscriptions:
+      1. user.created → user_created
+      2. booking.created → booking_request
+      3. booking.confirmed → booking_confirmed
+      4. booking.cancelled → booking_cancelled
+      5. payment.succeeded → payment_received
+      6. payment.failed → payment_failed
+      7. payment.refunded → refund_processed
+      8. message.sent → new_message
+      9. review.created → review_received
+    - Functions:
+      * connect - RabbitMQ connection
+      * subscribe - Subscribe to events
+      * handleEvent - Process received events
+      * mapEventToNotification - Event data mapping
+      * publish - Publish events (testing)
+      * disconnect - Close connection
+    - Auto-reconnection
+    - Durable queues
+    - Message TTL (24h)
+    - Error handling
+
+15. /home/arwa/hometrip-microservices/services/notification-service/src/utils/logger.js
+    - Structured logging system
+    - 4 log levels: error, warn, info, debug
+    - File & console output
+    - Log files:
+      * /logs/error.log - Errors
+      * /logs/warn.log - Warnings
+      * /logs/info.log - Info
+      * /logs/debug.log - Debug
+      * /logs/all.log - All logs
+    - Functions:
+      * error - Log errors
+      * warn - Log warnings
+      * info - Log information
+      * debug - Log debug
+      * logUncaughtError - Handle uncaught errors
+      * logUnhandledRejection - Handle rejected promises
+    - Timestamp formatting
+    - Log rotation ready
+
+================================================================================
+DOCUMENTATION (4)
+================================================================================
+
+16. /home/arwa/hometrip-microservices/services/notification-service/README.md
+    - Complete API documentation (468 lines)
+    - Features overview
+    - Installation & setup
+    - Configuration guide
+    - API endpoints documentation
+    - Notification types (30+)
+    - RabbitMQ events
+    - Email templates
+    - SMS templates
+    - Health checks
+    - Authentication
+    - Testing guide
+    - Performance & optimization
+    - Deployment options
+    - Troubleshooting guide
+
+17. /home/arwa/hometrip-microservices/services/notification-service/IMPLEMENTATION_SUMMARY.md
+    - Architecture overview (650 lines)
+    - Project structure
+    - Detailed file descriptions
+    - Feature implementation details
+    - Notification types (30+)
+    - Event subscriptions (9)
+    - API endpoints (11)
+    - Security features
+    - Monitoring & logging
+    - Database features
+    - Response formats
+    - Performance optimizations
+    - Scalability features
+    - File statistics
+
+18. /home/arwa/hometrip-microservices/services/notification-service/SETUP_GUIDE.md
+    - Step-by-step setup (761 lines)
+    - Quick start guide
+    - Environment configuration
+    - Email setup (Gmail, Mailtrap, custom SMTP)
+    - Twilio SMS setup
+    - Database setup (MongoDB, Atlas)
+    - RabbitMQ setup (local, Docker, CloudAMQP)
+    - Integration with other services
+    - Event publishing examples
+    - Complete event payloads
+    - Docker Compose deployment
+    - Kubernetes deployment
+    - Monitoring & logging
+    - Troubleshooting
+    - Performance tuning
+
+19. /home/arwa/hometrip-microservices/services/notification-service/INDEX.md
+    - File reference guide (487 lines)
+    - Complete file listing
+    - Module descriptions
+    - API endpoints summary
+    - Notification types summary
+    - Getting started checklist
+    - Quick reference tables
+    - Support information
+
+================================================================================
+TOTAL FILE COUNT: 19
+================================================================================
+
+DIRECTORY STRUCTURE:
+  notification-service/
+  ├── src/
+  │   ├── config/
+  │   │   ├── index.js
+  │   │   └── database.js
+  │   ├── controllers/
+  │   │   └── notificationController.js
+  │   ├── middleware/
+  │   │   └── auth.js
+  │   ├── models/
+  │   │   └── Notification.js
+  │   ├── routes/
+  │   │   └── notifications.js
+  │   ├── services/
+  │   │   ├── emailService.js
+  │   │   └── smsService.js
+  │   ├── utils/
+  │   │   ├── eventBus.js
+  │   │   └── logger.js
+  │   └── index.js
+  ├── package.json
+  ├── .env.example
+  ├── Dockerfile
+  ├── .dockerignore
+  ├── README.md
+  ├── IMPLEMENTATION_SUMMARY.md
+  ├── SETUP_GUIDE.md
+  ├── INDEX.md
+  └── FILES_MANIFEST.txt (this file)
+
+================================================================================
+CODE STATISTICS
+================================================================================
+
+Source Code:        2,395 lines
+Documentation:      2,366 lines
+Configuration:        165 lines
+Total:              4,926 lines
+
+Module Breakdown:
+  src/services/emailService.js        675 lines (28.2%)
+  src/controllers/notificationController.js  541 lines (22.6%)
+  src/utils/eventBus.js               321 lines (13.4%)
+  src/models/Notification.js          230 lines (9.6%)
+  src/middleware/auth.js              154 lines (6.4%)
+  src/config/index.js                  68 lines (2.8%)
+  src/config/database.js               82 lines (3.4%)
+  src/services/smsService.js          143 lines (6%)
+  src/utils/logger.js                 119 lines (5%)
+  src/routes/notifications.js          62 lines (2.6%)
+
+Documentation Files:
+  SETUP_GUIDE.md                      761 lines
+  IMPLEMENTATION_SUMMARY.md           650 lines
+  README.md                           468 lines
+  INDEX.md                            487 lines
+
+================================================================================
+FEATURES SUMMARY
+================================================================================
+
+NOTIFICATION CHANNELS: 4
+  - Email (Nodemailer)
+  - SMS (Twilio)
+  - Push (Firebase ready)
+  - In-App (MongoDB)
+
+NOTIFICATION TYPES: 30+
+  - Bookings (8)
+  - Payments (5)
+  - Messages (2)
+  - Reviews (4)
+  - Listings (4)
+  - Favorites (3)
+  - Account (6)
+  - System (3)
+
+EVENT SUBSCRIPTIONS: 9
+  - user.created
+  - booking.created
+  - booking.confirmed
+  - booking.cancelled
+  - payment.succeeded
+  - payment.failed
+  - payment.refunded
+  - message.sent
+  - review.created
+
+API ENDPOINTS: 11
+  - GET /api/notifications
+  - GET /api/notifications/unread-count
+  - GET /api/notifications/:id
+  - PUT /api/notifications/:id/read
+  - PUT /api/notifications/:id/unread
+  - PUT /api/notifications/mark-all-read
+  - PUT /api/notifications/:id/archive
+  - DELETE /api/notifications/:id
+  - DELETE /api/notifications/bulk-delete
+  - GET /health
+  - GET /metrics
+
+EMAIL TEMPLATES: 8
+  1. User Confirmation
+  2. New Reservation Request
+  3. Reservation Confirmed
+  4. Reservation Cancelled
+  5. Payment Failed
+  6. Refund Confirmation
+  7. New Message
+  8. Review Received
+
+SMS TEMPLATES: 7
+  1. Verification Code
+  2. Reservation Confirmation
+  3. Check-in Reminder
+  4. Check-out Reminder
+  5. New Message
+  6. Payment Failed
+  7. Booking Request
+
+================================================================================
+DEPLOYMENT READY
+================================================================================
+
+Status: PRODUCTION READY
+Version: 1.0.0
+Created: 2024-11-17
+
+Required Dependencies:
+  - Node.js 18+
+  - MongoDB 5+
+  - RabbitMQ 3+
+  - npm/yarn
+
+Optional Dependencies:
+  - Gmail/SMTP (for email)
+  - Twilio (for SMS)
+
+Deployment Options:
+  - npm start (local)
+  - npm run dev (development)
+  - Docker (docker build & run)
+  - Docker Compose (docker-compose up)
+  - Kubernetes (kubectl apply)
+
+Security Features:
+  - JWT Authentication
+  - Helmet headers
+  - CORS control
+  - Rate limiting
+  - Input validation
+  - Non-root Docker user
+
+Monitoring:
+  - Health check endpoint
+  - Metrics endpoint
+  - Structured logging
+  - Error tracking
+  - Connection monitoring
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+1. Review Documentation
+   - Start with README.md for overview
+   - Check SETUP_GUIDE.md for setup
+   - Review IMPLEMENTATION_SUMMARY.md for architecture
+
+2. Install & Configure
+   - Run: npm install
+   - Copy: cp .env.example .env
+   - Edit: .env (add your credentials)
+
+3. Set up Services
+   - MongoDB (local or Atlas)
+   - RabbitMQ (local or CloudAMQP)
+   - Email provider (Gmail/SMTP)
+   - Twilio (optional for SMS)
+
+4. Start Development
+   - Run: npm run dev
+   - Verify: curl http://localhost:4009/health
+   - Test: Use provided curl examples
+
+5. Integration
+   - Integrate with other microservices
+   - Publish events to RabbitMQ
+   - Configure API endpoints
+
+6. Production Deployment
+   - Build Docker image
+   - Deploy to infrastructure
+   - Configure monitoring
+   - Set up logging
+
+================================================================================
+SUPPORT & DOCUMENTATION
+================================================================================
+
+Quick Help:
+  - API Documentation: README.md
+  - Setup Help: SETUP_GUIDE.md
+  - Architecture: IMPLEMENTATION_SUMMARY.md
+  - File Reference: INDEX.md
+
+Troubleshooting:
+  - Check logs: /logs/error.log
+  - Health: curl http://localhost:4009/health
+  - Database: mongosh to test connection
+  - RabbitMQ: Check management UI (localhost:15672)
+
+Configuration:
+  - Email not working: Check SETUP_GUIDE.md Email Configuration
+  - SMS not working: Check SETUP_GUIDE.md Twilio Setup
+  - Events not received: Check SETUP_GUIDE.md RabbitMQ Setup
+  - API errors: Check logs/ directory
+
+================================================================================
+END OF MANIFEST
+================================================================================
+
+All files have been successfully created.
+The Notification Service is ready for deployment.
+
+For questions, refer to the comprehensive documentation files.

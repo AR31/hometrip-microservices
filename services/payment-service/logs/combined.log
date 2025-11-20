@@ -1,0 +1,18 @@
+{"level":"info","message":"Connecting to MongoDB...","service":"payment-service","timestamp":"2025-11-17 18:24:12","uri":"mongodb://localhost:27017/hometrip_payment"}
+{"level":"warn","message":"Mongoose disconnected from MongoDB","service":"payment-service","timestamp":"2025-11-17 18:24:42"}
+{"level":"info","message":"Connecting to MongoDB...","service":"payment-service","timestamp":"2025-11-17 18:25:36","uri":"mongodb://localhost:27017/hometrip_payment"}
+{"level":"warn","message":"Mongoose disconnected from MongoDB","service":"payment-service","timestamp":"2025-11-17 18:26:06"}
+{"level":"info","message":"Connecting to MongoDB...","service":"payment-service","timestamp":"2025-11-17 18:31:35","uri":"mongodb://localhost:27017/hometrip_payment"}
+{"level":"info","message":"Connecting to MongoDB...","service":"payment-service","timestamp":"2025-11-17 18:31:35","uri":"mongodb://localhost:27017/hometrip_payment"}
+{"level":"warn","message":"Mongoose disconnected from MongoDB","service":"payment-service","timestamp":"2025-11-17 18:32:05"}
+{"level":"warn","message":"Mongoose disconnected from MongoDB","service":"payment-service","timestamp":"2025-11-17 18:32:05"}
+{"level":"info","message":"Connecting to MongoDB...","service":"payment-service","timestamp":"2025-11-17 18:33:28","uri":"mongodb://localhost:27017/hometrip_payment"}
+{"level":"warn","message":"Mongoose disconnected from MongoDB","service":"payment-service","timestamp":"2025-11-17 18:33:58"}
+{"level":"info","message":"Connecting to MongoDB...","service":"payment-service","timestamp":"2025-11-17 18:40:53","uri":"mongodb://localhost:27017/hometrip_payment"}
+{"level":"info","message":"Connecting to MongoDB...","service":"payment-service","timestamp":"2025-11-17 18:40:53","uri":"mongodb://localhost:27017/hometrip_payment"}
+{"level":"info","message":"Connecting to MongoDB...","service":"payment-service","timestamp":"2025-11-17 18:40:53","uri":"mongodb://localhost:27017/hometrip_payment"}
+{"level":"warn","message":"Mongoose disconnected from MongoDB","service":"payment-service","timestamp":"2025-11-17 18:41:23"}
+{"level":"warn","message":"Mongoose disconnected from MongoDB","service":"payment-service","timestamp":"2025-11-17 18:41:23"}
+{"level":"warn","message":"Mongoose disconnected from MongoDB","service":"payment-service","timestamp":"2025-11-17 18:41:23"}
+{"level":"info","message":"Connecting to MongoDB...","service":"payment-service","timestamp":"2025-11-17 18:41:48","uri":"mongodb://localhost:27017/hometrip_payment"}
+{"level":"warn","message":"Mongoose disconnected from MongoDB","service":"payment-service","timestamp":"2025-11-17 18:42:18"}
