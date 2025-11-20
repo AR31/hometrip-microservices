@@ -1,0 +1,268 @@
+require('dotenv').config();
+
+const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
+const axios = require('axios');
+
+const config = require('./config');
+const logger = require('./utils/logger');
+const eventBus = require('./utils/eventBus');
+const connectDB = require('./config/database');
+
+// Import routes
+const webhookRoutes = require('./routes/webhook');
+const paymentRoutes = require('./routes/payments');
+
+// Import middleware
+const { requestLogger, errorHandler } = require('./middleware/auth');
+
+
+// Swagger Documentation
+const { swaggerSpec, swaggerUi, swaggerUiOptions } = require('./config/swagger');
+const app = express();
+
+/**
+ * IMPORTANT: Webhook route MUST be registered BEFORE body parser middleware
+ * because Stripe webhooks require the raw body for signature verification
+ */
+app.use('/api/webhook', webhookRoutes);
+
+/**
+ * Body parser middleware - applied AFTER webhook routes
+ */
+app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ limit: '10kb', extended: true }));
+
+/**
+ * Security and logging middleware
+ */
+app.use(helmet());
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || '*',
+  credentials: true,
+}));
+app.use(requestLogger);
+
+/**
+ * Health check endpoint
+ */
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    service: 'payment-service',
+    timestamp: new Date(),
+    uptime: process.uptime(),
+  });
+});
+
+/**
+ * Ready check endpoint
+ */
+app.get('/ready', async (req, res) => {
+  try {
+    const dbReady = require('mongoose').connection.readyState === 1;
+
+    if (!dbReady) {
+      return res.status(503).json({
+        status: 'not ready',
+        message: 'Database not connected',
+      });
+    }
+
+    res.json({
+      status: 'ready',
+      service: 'payment-service',
+      database: 'connected',
+    });
+  } catch (error) {
+    res.status(503).json({
+      status: 'error',
+      message: error.message,
+    });
+  }
+});
+
+/**
+ * Info endpoint
+ */
+app.get('/api/info', (req, res) => {
+  res.json({
+    service: 'payment-service',
+    version: '1.0.0',
+    port: config.PORT,
+    nodeEnv: config.NODE_ENV,
+    events: eventBus.getAvailableEvents(),
+  });
+});
+
+/**
+ * Event handling endpoint for incoming events from event bus
+ */
+app.post('/api/events', express.json(), async (req, res) => {
+  try {
+    const event = req.body;
+
+    logger.info('Event received', {
+      eventType: event.type,
+      eventId: event.id,
+      source: event.service,
+    });
+
+    // Handle event based on type
+    await handleIncomingEvent(event);
+
+    res.json({ received: true, eventId: event.id });
+  } catch (error) {
+    logger.logError('Error handling incoming event', error);
+    res.status(500).json({
+      received: false,
+      error: error.message,
+    });
+  }
+});
+
+/**
+ * Payment routes
+ */
+app.use('/api/payments', paymentRoutes);
+
+/**
+ * 404 handler
+ */
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    error: 'Not found',
+    path: req.path,
+  });
+});
+
+/**
+ * Error handling middleware
+ */
+app.use(errorHandler);
+
+/**
+ * Handle incoming events from other services
+ */
+async function handleIncomingEvent(event) {
+  const { type, data } = event;
+
+  switch (type) {
+    case 'booking.created':
+      // A new booking was created, might need to create payment intent
+      logger.info('Booking created event received', {
+        reservationId: data.reservationId,
+      });
+      break;
+
+    case 'booking.cancelled':
+      // Booking was cancelled, might need to process refund
+      logger.info('Booking cancelled event received', {
+        reservationId: data.reservationId,
+      });
+      break;
+
+    case 'user.updated':
+      // User information was updated
+      logger.info('User updated event received', {
+        userId: data.userId,
+      });
+      break;
+
+    default:
+      logger.warn(`Unhandled event type: ${type}`);
+  }
+
+  // Process through event bus handlers
+  await eventBus.handleEvent(event);
+}
+
+/**
+ * Subscribe to events from other services
+ */
+async function subscribeToEvents() {
+  try {
+    // Subscribe to booking created events
+    await eventBus.subscribeToEvent('booking.created', async (event) => {
+      logger.info('Processing booking.created event', {
+        reservationId: event.data.reservationId,
+      });
+      // Payment intent will be created on demand by the client
+    });
+
+    // Subscribe to booking cancelled events
+    await eventBus.subscribeToEvent('booking.cancelled', async (event) => {
+      logger.info('Processing booking.cancelled event', {
+        reservationId: event.data.reservationId,
+      });
+      // Handle automatic refund if needed
+    });
+
+    logger.info('Event subscriptions initialized');
+  } catch (error) {
+    logger.warn('Failed to initialize event subscriptions', {
+      error: error.message,
+    });
+  }
+}
+
+/**
+ * Start server
+ */
+async function startServer() {
+  try {
+    // Connect to MongoDB
+    await connectDB();
+
+    // Subscribe to events
+    await subscribeToEvents();
+
+    // Start Express server
+    const server = app.listen(config.PORT, () => {
+      logger.info('Payment Service started', {
+        port: config.PORT,
+        nodeEnv: config.NODE_ENV,
+      });
+
+      console.log(`
+╔════════════════════════════════════════════════════════════════╗
+║                  PAYMENT SERVICE STARTED                       ║
+╠════════════════════════════════════════════════════════════════╣
+║  Service:    Payment Service                                   ║
+║  Port:       ${config.PORT}                                             ║
+║  Environment: ${config.NODE_ENV}                                        ║
+║  Health:     GET /health                                      ║
+║  Ready:      GET /ready                                       ║
+║  API Info:   GET /api/info                                    ║
+╚════════════════════════════════════════════════════════════════╝
+      `);
+    });
+
+    // Graceful shutdown
+    process.on('SIGTERM', () => {
+      logger.info('SIGTERM signal received: closing HTTP server');
+      server.close(() => {
+        logger.info('HTTP server closed');
+        process.exit(0);
+      });
+    });
+
+    process.on('SIGINT', () => {
+      logger.info('SIGINT signal received: closing HTTP server');
+      server.close(() => {
+        logger.info('HTTP server closed');
+        process.exit(0);
+      });
+    });
+  } catch (error) {
+    logger.logError('Failed to start server', error);
+    process.exit(1);
+  }
+}
+
+// Start the server
+startServer();
+
+module.exports = app;

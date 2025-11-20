@@ -330,3 +330,30 @@
 2025-11-19 23:35:22 [INFO]: Message Service running on port 3006
 2025-11-19 23:35:22 [INFO]: Subscribed to event pattern: user.deleted
 2025-11-19 23:50:48 [INFO]: SIGTERM received, shutting down gracefully...
+2025-11-20 14:39:25 [INFO]: MongoDB connected to mongodb+srv://arwakhlifi31:bjR7XvPaL3savRmt@cluster0.hxvjyu7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+2025-11-20 14:39:25 [INFO]: EventBus connected to RabbitMQ
+2025-11-20 14:39:25 [INFO]: Message Service running on port 3006
+2025-11-20 14:39:25 [INFO]: Subscribed to event pattern: user.deleted
+2025-11-20 15:28:33 [INFO]: GET /messages/bookings/host
+2025-11-20 15:28:33 [INFO]: GET /messages/bookings/host
+2025-11-20 15:28:46 [INFO]: GET /messages/bookings/host
+2025-11-20 15:52:45 [INFO]: GET /health
+2025-11-20 17:43:11 [INFO]: MongoDB connected to mongodb+srv://arwakhlifi31:bjR7XvPaL3savRmt@cluster0.hxvjyu7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+2025-11-20 17:43:11 [INFO]: EventBus connected to RabbitMQ
+2025-11-20 17:43:11 [INFO]: Message Service running on port 3006
+2025-11-20 17:43:11 [INFO]: Subscribed to event pattern: user.deleted
+2025-11-20 18:09:03 [INFO]: SIGTERM received, shutting down gracefully...
+2025-11-20 18:09:03 [INFO]: EventBus disconnected
+2025-11-20 18:11:57 [INFO]: MongoDB connected to mongodb+srv://arwakhlifi31:bjR7XvPaL3savRmt@cluster0.hxvjyu7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+2025-11-20 18:11:57 [INFO]: EventBus connected to RabbitMQ
+2025-11-20 18:11:57 [INFO]: Message Service running on port 3006
+2025-11-20 18:11:57 [INFO]: Subscribed to event pattern: user.deleted
+2025-11-20 18:25:25 [INFO]: GET /health
+2025-11-20 18:26:12 [INFO]: GET /health
+2025-11-20 18:28:58 [INFO]: GET /health
+2025-11-20 18:29:21 [INFO]: GET /health
+2025-11-20 18:29:49 [INFO]: GET /health
+2025-11-20 18:30:13 [INFO]: GET /health
+2025-11-20 18:30:45 [INFO]: GET /health
+2025-11-20 18:52:02 [INFO]: SIGTERM received, shutting down gracefully...
+2025-11-20 18:52:02 [INFO]: EventBus disconnected

@@ -69,6 +69,10 @@ const userSchema = new mongoose.Schema(
     twoFactorSecret: { type: String },
     lastPasswordChange: { type: Date },
 
+    // Reset de mot de passe
+    resetPasswordToken: { type: String },
+    resetPasswordExpires: { type: Date },
+
     // Appareils connectés
     devices: [{
       deviceId: { type: String },

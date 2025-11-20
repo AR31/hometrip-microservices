@@ -39,6 +39,10 @@ app.get('/health', (req, res) => {
       'notification-service': process.env.NOTIFICATION_SERVICE_URL,
       'search-service': process.env.SEARCH_SERVICE_URL,
       'logger-service': process.env.LOGGER_SERVICE_URL,
+      'experience-service': process.env.EXPERIENCE_SERVICE_URL,
+      'wishlist-service': process.env.WISHLIST_SERVICE_URL,
+      'gift-card-service': process.env.GIFTCARD_SERVICE_URL,
+      'dispute-service': process.env.DISPUTE_SERVICE_URL,
       'websocket-gateway': process.env.WEBSOCKET_GATEWAY_URL
     }
   });
@@ -88,7 +92,21 @@ const services = [
   { path: '/api/analytics', target: process.env.ANALYTICS_SERVICE_URL, pathRewrite: { '^/api/analytics': '/analytics' } },
   { path: '/api/notifications', target: process.env.NOTIFICATION_SERVICE_URL, pathRewrite: { '^/api/notifications': '/api/notifications' } }, // Le service utilise déjà /api/notifications
   { path: '/api/search', target: process.env.SEARCH_SERVICE_URL, pathRewrite: { '^/api/search': '/search' } },
-  { path: '/api/logs', target: process.env.LOGGER_SERVICE_URL, pathRewrite: { '^/api/logs': '/logs' } }
+  { path: '/api/logs', target: process.env.LOGGER_SERVICE_URL, pathRewrite: { '^/api/logs': '/logs' } },
+  { path: '/api/experiences', target: process.env.EXPERIENCE_SERVICE_URL, pathRewrite: { '^/api/experiences': '/api/experiences' } },
+  { path: '/api/experience-bookings', target: process.env.EXPERIENCE_SERVICE_URL, pathRewrite: { '^/api/experience-bookings': '/api/experience-bookings' } },
+  { path: '/api/wishlists', target: process.env.WISHLIST_SERVICE_URL, pathRewrite: { '^/api/wishlists': '/api/wishlists' } },
+  { path: '/api/gift-cards', target: process.env.GIFTCARD_SERVICE_URL, pathRewrite: { '^/api/gift-cards': '/api/gift-cards' } },
+  { path: '/api/disputes', target: process.env.DISPUTE_SERVICE_URL, pathRewrite: { '^/api/disputes': '/api/disputes' } },
+  { path: '/api/reports', target: process.env.DISPUTE_SERVICE_URL, pathRewrite: { '^/api/reports': '/api/reports' } },
+  // New services - Phase 2
+  { path: '/api/identity-verification', target: process.env.IDENTITY_VERIFICATION_SERVICE_URL, pathRewrite: { '^/api/identity-verification': '/api/identity-verification' } },
+  { path: '/api/cancellation-policy', target: process.env.CANCELLATION_POLICY_SERVICE_URL, pathRewrite: { '^/api/cancellation-policy': '/api/cancellation-policy' } },
+  { path: '/api/coupons', target: process.env.COUPON_SERVICE_URL, pathRewrite: { '^/api/coupons': '/api/coupons' } },
+  { path: '/api/2fa', target: process.env.TWO_FACTOR_SERVICE_URL, pathRewrite: { '^/api/2fa': '/api/2fa' } },
+  { path: '/api/payouts', target: process.env.PAYOUT_SERVICE_URL, pathRewrite: { '^/api/payouts': '/api/payouts' } },
+  { path: '/api/emails', target: process.env.EMAIL_SERVICE_URL, pathRewrite: { '^/api/emails': '/api/emails' } },
+  { path: '/api/payment-history', target: process.env.PAYMENT_HISTORY_SERVICE_URL, pathRewrite: { '^/api/payment-history': '/api/payment-history' } }
 ];
 
 // Register proxy routes

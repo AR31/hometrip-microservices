@@ -1,0 +1,35 @@
+{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017","reason":{"commonWireVersion":0,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"logicalSessionTimeoutMinutes":null,"maxElectionId":null,"maxSetVersion":null,"servers":{},"setName":null,"stale":false,"type":"Unknown"},"service":"wishlist-service","stack":"MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017\n    at _handleConnectionErrors (/home/arwa/hopTrip/hometrip-microservices/services/wishlist-service/node_modules/mongoose/lib/connection.js:816:11)\n    at NativeConnection.openUri (/home/arwa/hopTrip/hometrip-microservices/services/wishlist-service/node_modules/mongoose/lib/connection.js:791:11)\n    at async connectDB (/home/arwa/hopTrip/hometrip-microservices/services/wishlist-service/src/config/database.js:15:5)\n    at async startServer (/home/arwa/hopTrip/hometrip-microservices/services/wishlist-service/src/index.js:79:5)","timestamp":"2025-11-20 15:17:22"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-00.hxvjyu7.mongodb.net","service":"wishlist-service","timestamp":"2025-11-20 15:22:32"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"wishlist-service","timestamp":"2025-11-20 15:22:32"}
+{"level":"info","message":"✅ Subscribed to pattern: listing.deleted","service":"wishlist-service","timestamp":"2025-11-20 15:22:32"}
+{"level":"info","message":"✅ Subscribed to pattern: user.deleted","service":"wishlist-service","timestamp":"2025-11-20 15:22:32"}
+{"level":"info","message":"✅ wishlist-service running on port 4012","service":"wishlist-service","timestamp":"2025-11-20 15:22:32"}
+{"level":"info","message":"📚 API Docs: http://localhost:4012/api-docs","service":"wishlist-service","timestamp":"2025-11-20 15:22:32"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-00.hxvjyu7.mongodb.net","service":"wishlist-service","timestamp":"2025-11-20 17:43:36"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"wishlist-service","timestamp":"2025-11-20 17:43:36"}
+{"level":"info","message":"✅ Subscribed to pattern: listing.deleted","service":"wishlist-service","timestamp":"2025-11-20 17:43:36"}
+{"level":"info","message":"✅ Subscribed to pattern: user.deleted","service":"wishlist-service","timestamp":"2025-11-20 17:43:36"}
+{"level":"info","message":"✅ wishlist-service running on port 4012","service":"wishlist-service","timestamp":"2025-11-20 17:43:36"}
+{"level":"info","message":"📚 API Docs: http://localhost:4012/api-docs","service":"wishlist-service","timestamp":"2025-11-20 17:43:36"}
+{"level":"info","message":"SIGTERM received. Closing server gracefully...","service":"wishlist-service","timestamp":"2025-11-20 18:09:20"}
+{"level":"warn","message":"MongoDB disconnected. Attempting to reconnect...","service":"wishlist-service","timestamp":"2025-11-20 18:09:20"}
+{"level":"warn","message":"RabbitMQ connection closed. Reconnecting...","service":"wishlist-service","timestamp":"2025-11-20 18:09:20"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-01.hxvjyu7.mongodb.net","service":"wishlist-service","timestamp":"2025-11-20 18:12:22"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"wishlist-service","timestamp":"2025-11-20 18:12:23"}
+{"level":"info","message":"✅ Subscribed to pattern: listing.deleted","service":"wishlist-service","timestamp":"2025-11-20 18:12:23"}
+{"level":"info","message":"✅ Subscribed to pattern: user.deleted","service":"wishlist-service","timestamp":"2025-11-20 18:12:23"}
+{"level":"info","message":"✅ wishlist-service running on port 4012","service":"wishlist-service","timestamp":"2025-11-20 18:12:23"}
+{"level":"info","message":"📚 API Docs: http://localhost:4012/api-docs","service":"wishlist-service","timestamp":"2025-11-20 18:12:23"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-00.hxvjyu7.mongodb.net","service":"wishlist-service","timestamp":"2025-11-20 18:29:11"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"wishlist-service","timestamp":"2025-11-20 18:29:12"}
+{"level":"info","message":"✅ Subscribed to pattern: listing.deleted","service":"wishlist-service","timestamp":"2025-11-20 18:29:12"}
+{"level":"info","message":"✅ Subscribed to pattern: user.deleted","service":"wishlist-service","timestamp":"2025-11-20 18:29:12"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-00.hxvjyu7.mongodb.net","service":"wishlist-service","timestamp":"2025-11-20 18:29:40"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"wishlist-service","timestamp":"2025-11-20 18:29:40"}
+{"level":"info","message":"✅ Subscribed to pattern: listing.deleted","service":"wishlist-service","timestamp":"2025-11-20 18:29:40"}
+{"level":"info","message":"✅ Subscribed to pattern: user.deleted","service":"wishlist-service","timestamp":"2025-11-20 18:29:40"}
+{"level":"info","message":"✅ wishlist-service running on port 4012","service":"wishlist-service","timestamp":"2025-11-20 18:29:40"}
+{"level":"info","message":"📚 API Docs: http://localhost:4012/api-docs","service":"wishlist-service","timestamp":"2025-11-20 18:29:40"}
+{"level":"info","message":"SIGTERM received. Closing server gracefully...","service":"wishlist-service","timestamp":"2025-11-20 18:52:19"}
+{"level":"warn","message":"MongoDB disconnected. Attempting to reconnect...","service":"wishlist-service","timestamp":"2025-11-20 18:52:19"}
+{"level":"warn","message":"RabbitMQ connection closed. Reconnecting...","service":"wishlist-service","timestamp":"2025-11-20 18:52:19"}

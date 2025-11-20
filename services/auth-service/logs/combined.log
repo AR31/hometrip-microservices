@@ -399,3 +399,289 @@
 {"level":"info","message":"127.0.0.1 - - [19/Nov/2025:22:45:09 +0000] \"GET /auth/me HTTP/1.1\" 200 699 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-19 23:45:09"}
 {"level":"info","message":"SIGTERM received. Starting graceful shutdown...","service":"auth-service","timestamp":"2025-11-19 23:50:48"}
 {"level":"info","message":"HTTP server closed","service":"auth-service","timestamp":"2025-11-19 23:50:48"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 14:39:09"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 14:39:09"}
+{"level":"info","message":"🚀 Auth Service running on 0.0.0.0:3001","service":"auth-service","timestamp":"2025-11-20 14:39:09"}
+{"level":"info","message":"Environment: development","service":"auth-service","timestamp":"2025-11-20 14:39:09"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:13:40:09 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 14:40:09"}
+{"level":"warn","message":"MongoDB disconnected","service":"auth-service","timestamp":"2025-11-20 15:14:43"}
+{"level":"info","message":"MongoDB reconnected","service":"auth-service","timestamp":"2025-11-20 15:14:53"}
+{"level":"info","message":"Login attempt for: arwakhlifi31@gmail.com","service":"auth-service","timestamp":"2025-11-20 15:26:52"}
+{"level":"warn","message":"Login failed: User not found - arwakhlifi31@gmail.com","service":"auth-service","timestamp":"2025-11-20 15:26:52"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:26:52 +0000] \"POST /auth/login HTTP/1.1\" 401 61 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 15:26:52"}
+{"level":"info","message":"Login attempt for: jamil@test.com","service":"auth-service","timestamp":"2025-11-20 15:27:06"}
+{"level":"info","message":"Login successful: jamil@test.com","service":"auth-service","timestamp":"2025-11-20 15:27:06"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:27:06 +0000] \"POST /auth/login HTTP/1.1\" 200 383 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 15:27:06"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:27:06 +0000] \"GET /auth/me HTTP/1.1\" 200 800 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 15:27:06"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:27:53 +0000] \"POST /auth/signup HTTP/1.1\" 400 59 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 15:27:53"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:27:56 +0000] \"POST /auth/signup HTTP/1.1\" 400 59 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 15:27:56"}
+{"level":"info","message":"New user registered: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 15:28:07"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:28:07 +0000] \"POST /auth/signup HTTP/1.1\" 201 164 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 15:28:07"}
+{"level":"info","message":"Login attempt for: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 15:28:07"}
+{"level":"info","message":"Login successful: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 15:28:07"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:28:07 +0000] \"POST /auth/login HTTP/1.1\" 200 386 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 15:28:07"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:28:46 +0000] \"GET /auth/me HTTP/1.1\" 200 689 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 15:28:46"}
+{"level":"info","message":"Login attempt for: demo@hometrip.com","service":"auth-service","timestamp":"2025-11-20 15:31:27"}
+{"level":"warn","message":"Login failed: Invalid password - demo@hometrip.com","service":"auth-service","timestamp":"2025-11-20 15:31:27"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:31:27 +0000] \"POST /auth/login HTTP/1.1\" 401 61 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 15:31:27"}
+{"level":"info","message":"Login attempt for: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 15:32:37"}
+{"level":"info","message":"Login successful: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 15:32:37"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:32:37 +0000] \"POST /auth/login HTTP/1.1\" 200 386 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 15:32:37"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:32:37 +0000] \"GET /auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 15:32:37"}
+{"level":"info","message":"Login attempt for: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 15:51:26"}
+{"level":"info","message":"Login successful: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 15:51:27"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:51:27 +0000] \"POST /auth/login HTTP/1.1\" 200 386 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 15:51:27"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:51:27 +0000] \"GET /auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 15:51:27"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:51:27 +0000] \"GET /auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 15:51:27"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:52:45 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 15:52:45"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 16:01:53"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 16:01:53"}
+{"level":"info","message":"🚀 Auth Service running on 0.0.0.0:3001","service":"auth-service","timestamp":"2025-11-20 16:01:53"}
+{"level":"info","message":"Environment: development","service":"auth-service","timestamp":"2025-11-20 16:01:53"}
+{"level":"info","message":"Login attempt for: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 16:02:07"}
+{"level":"info","message":"Login successful: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 16:02:07"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:02:07 +0000] \"POST /auth/login HTTP/1.1\" 200 386 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:02:07"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:02:07 +0000] \"GET /auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:02:07"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:02:07 +0000] \"GET /auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:02:07"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 16:02:30"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 16:02:30"}
+{"level":"info","message":"🚀 Auth Service running on 0.0.0.0:3001","service":"auth-service","timestamp":"2025-11-20 16:02:30"}
+{"level":"info","message":"Environment: development","service":"auth-service","timestamp":"2025-11-20 16:02:30"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 16:06:01"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 16:06:01"}
+{"level":"info","message":"🚀 Auth Service running on 0.0.0.0:3001","service":"auth-service","timestamp":"2025-11-20 16:06:01"}
+{"level":"info","message":"Environment: development","service":"auth-service","timestamp":"2025-11-20 16:06:01"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 16:06:19"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 16:06:19"}
+{"level":"info","message":"🚀 Auth Service running on 0.0.0.0:3001","service":"auth-service","timestamp":"2025-11-20 16:06:19"}
+{"level":"info","message":"Environment: development","service":"auth-service","timestamp":"2025-11-20 16:06:19"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 16:16:15"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 16:16:15"}
+{"level":"info","message":"🚀 Auth Service running on 0.0.0.0:3001","service":"auth-service","timestamp":"2025-11-20 16:16:15"}
+{"level":"info","message":"Environment: development","service":"auth-service","timestamp":"2025-11-20 16:16:15"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 16:16:20"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 16:16:20"}
+{"level":"info","message":"🚀 Auth Service running on 0.0.0.0:3001","service":"auth-service","timestamp":"2025-11-20 16:16:20"}
+{"level":"info","message":"Environment: development","service":"auth-service","timestamp":"2025-11-20 16:16:20"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 16:37:00"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 16:37:00"}
+{"level":"info","message":"🚀 Auth Service running on 0.0.0.0:4001","service":"auth-service","timestamp":"2025-11-20 16:37:00"}
+{"level":"info","message":"Environment: development","service":"auth-service","timestamp":"2025-11-20 16:37:00"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:37:15 +0000] \"GET /api-docs HTTP/1.1\" 301 158 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:37:15"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:37:15 +0000] \"GET /api-docs/ HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:37:15"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:37:15 +0000] \"GET /api-docs/swagger-ui.css HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:37:15"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:37:15 +0000] \"GET /api-docs/swagger-ui-init.js HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:37:15"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:37:15 +0000] \"GET /api-docs/swagger-ui-standalone-preset.js HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:37:15"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:37:15 +0000] \"GET /api-docs/swagger-ui-bundle.js HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:37:15"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:37:15 +0000] \"GET /api-docs/favicon-32x32.png HTTP/1.1\" 200 628 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:37:15"}
+{"level":"info","message":"New user registered: user@example.com","service":"auth-service","timestamp":"2025-11-20 16:37:31"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:37:31 +0000] \"POST /auth/signup HTTP/1.1\" 201 164 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:37:31"}
+{"level":"info","message":"Login attempt for: user@example.com","service":"auth-service","timestamp":"2025-11-20 16:38:03"}
+{"level":"info","message":"Login successful: user@example.com","service":"auth-service","timestamp":"2025-11-20 16:38:03"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:38:03 +0000] \"POST /auth/login HTTP/1.1\" 200 387 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:38:03"}
+{"level":"info","message":"Login attempt for: user@examplej.com","service":"auth-service","timestamp":"2025-11-20 16:38:19"}
+{"level":"warn","message":"Login failed: User not found - user@examplej.com","service":"auth-service","timestamp":"2025-11-20 16:38:19"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:38:19 +0000] \"POST /auth/login HTTP/1.1\" 401 61 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:38:19"}
+{"level":"error","message":"jwt malformed","name":"JsonWebTokenError","service":"auth-service","stack":"JsonWebTokenError: jwt malformed\n    at module.exports [as verify] (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/jsonwebtoken/verify.js:70:17)\n    at exports.refreshToken (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/src/controllers/authController.js:295:25)\n    at Layer.handle [as handle_request] (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/express/lib/router/layer.js:95:5)\n    at /home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/express/lib/router/index.js:346:12)\n    at next (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/express/lib/router/index.js:280:10)\n    at Function.handle (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/express/lib/router/index.js:175:3)","timestamp":"2025-11-20 16:38:35"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:38:35 +0000] \"POST /auth/refresh HTTP/1.1\" 401 44 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:38:35"}
+{"level":"info","message":"Login attempt for: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 16:48:03"}
+{"level":"info","message":"Login successful: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 16:48:03"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:48:03 +0000] \"POST /auth/login HTTP/1.1\" 200 386 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:48:03"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:48:03 +0000] \"GET /auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:48:03"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:48:03 +0000] \"GET /auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 16:48:03"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:50:19 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 16:50:19"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:50:19 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 16:50:19"}
+{"level":"info","message":"Login attempt for: marie.martin@example.com","service":"auth-service","timestamp":"2025-11-20 16:50:19"}
+{"level":"warn","message":"Login failed: User not found - marie.martin@example.com","service":"auth-service","timestamp":"2025-11-20 16:50:19"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:50:19 +0000] \"POST /auth/login HTTP/1.1\" 401 61 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 16:50:19"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:00:15 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 17:00:15"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:00:15 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 17:00:15"}
+{"level":"info","message":"Login attempt for: marie.martin@example.com","service":"auth-service","timestamp":"2025-11-20 17:00:15"}
+{"level":"warn","message":"Login failed: User not found - marie.martin@example.com","service":"auth-service","timestamp":"2025-11-20 17:00:15"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:00:15 +0000] \"POST /auth/login HTTP/1.1\" 401 61 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 17:00:15"}
+{"body":"{\"email\": \"marie.martin@example.com\", \"password\": \"Password123\\!\"}","expose":true,"level":"error","message":"Unhandled error: Unexpected token ! in JSON at position 63","service":"auth-service","stack":"SyntaxError: Unexpected token ! in JSON at position 63\n    at JSON.parse (<anonymous>)\n    at parse (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/body-parser/lib/types/json.js:92:19)\n    at /home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/body-parser/lib/read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)\n    at invokeCallback (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/raw-body/index.js:238:16)\n    at done (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/raw-body/index.js:227:7)\n    at IncomingMessage.onEnd (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/raw-body/index.js:287:7)\n    at IncomingMessage.emit (node:events:517:28)\n    at endReadableNT (node:internal/streams/readable:1400:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)","status":400,"statusCode":400,"timestamp":"2025-11-20 17:04:26","type":"entity.parse.failed"}
+{"level":"info","message":"Login attempt for: marie.martin@example.com","service":"auth-service","timestamp":"2025-11-20 17:07:43"}
+{"level":"warn","message":"Login failed: User not found - marie.martin@example.com","service":"auth-service","timestamp":"2025-11-20 17:07:43"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:07:43 +0000] \"POST /auth/login HTTP/1.1\" 401 61 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 17:07:43"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 17:08:38"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 17:08:38"}
+{"address":"0.0.0.0","code":"EADDRINUSE","errno":-98,"level":"error","message":"Uncaught Exception: listen EADDRINUSE: address already in use 0.0.0.0:3001","port":3001,"service":"auth-service","stack":"Error: listen EADDRINUSE: address already in use 0.0.0.0:3001\n    at Server.setupListenHandle [as _listen2] (node:net:1817:16)\n    at listenInCluster (node:net:1865:12)\n    at doListen (node:net:2014:7)\n    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)","syscall":"listen","timestamp":"2025-11-20 17:08:38"}
+{"level":"info","message":"uncaughtException received. Starting graceful shutdown...","service":"auth-service","timestamp":"2025-11-20 17:08:38"}
+{"level":"info","message":"HTTP server closed","service":"auth-service","timestamp":"2025-11-20 17:08:38"}
+{"level":"warn","message":"MongoDB disconnected","service":"auth-service","timestamp":"2025-11-20 17:08:38"}
+{"level":"info","message":"MongoDB connection closed","service":"auth-service","timestamp":"2025-11-20 17:08:38"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"auth-service","timestamp":"2025-11-20 17:08:38"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 17:09:02"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 17:09:02"}
+{"address":"0.0.0.0","code":"EADDRINUSE","errno":-98,"level":"error","message":"Uncaught Exception: listen EADDRINUSE: address already in use 0.0.0.0:3001","port":3001,"service":"auth-service","stack":"Error: listen EADDRINUSE: address already in use 0.0.0.0:3001\n    at Server.setupListenHandle [as _listen2] (node:net:1817:16)\n    at listenInCluster (node:net:1865:12)\n    at doListen (node:net:2014:7)\n    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)","syscall":"listen","timestamp":"2025-11-20 17:09:02"}
+{"level":"info","message":"uncaughtException received. Starting graceful shutdown...","service":"auth-service","timestamp":"2025-11-20 17:09:02"}
+{"level":"info","message":"HTTP server closed","service":"auth-service","timestamp":"2025-11-20 17:09:02"}
+{"level":"warn","message":"MongoDB disconnected","service":"auth-service","timestamp":"2025-11-20 17:09:02"}
+{"level":"info","message":"MongoDB connection closed","service":"auth-service","timestamp":"2025-11-20 17:09:02"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"auth-service","timestamp":"2025-11-20 17:09:02"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 17:09:51"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 17:09:51"}
+{"address":"0.0.0.0","code":"EADDRINUSE","errno":-98,"level":"error","message":"Uncaught Exception: listen EADDRINUSE: address already in use 0.0.0.0:3001","port":3001,"service":"auth-service","stack":"Error: listen EADDRINUSE: address already in use 0.0.0.0:3001\n    at Server.setupListenHandle [as _listen2] (node:net:1817:16)\n    at listenInCluster (node:net:1865:12)\n    at doListen (node:net:2014:7)\n    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)","syscall":"listen","timestamp":"2025-11-20 17:09:51"}
+{"level":"info","message":"uncaughtException received. Starting graceful shutdown...","service":"auth-service","timestamp":"2025-11-20 17:09:51"}
+{"level":"info","message":"HTTP server closed","service":"auth-service","timestamp":"2025-11-20 17:09:51"}
+{"level":"warn","message":"MongoDB disconnected","service":"auth-service","timestamp":"2025-11-20 17:09:52"}
+{"level":"info","message":"MongoDB connection closed","service":"auth-service","timestamp":"2025-11-20 17:09:52"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"auth-service","timestamp":"2025-11-20 17:09:52"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 17:09:56"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 17:09:56"}
+{"address":"0.0.0.0","code":"EADDRINUSE","errno":-98,"level":"error","message":"Uncaught Exception: listen EADDRINUSE: address already in use 0.0.0.0:3001","port":3001,"service":"auth-service","stack":"Error: listen EADDRINUSE: address already in use 0.0.0.0:3001\n    at Server.setupListenHandle [as _listen2] (node:net:1817:16)\n    at listenInCluster (node:net:1865:12)\n    at doListen (node:net:2014:7)\n    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)","syscall":"listen","timestamp":"2025-11-20 17:09:56"}
+{"level":"info","message":"uncaughtException received. Starting graceful shutdown...","service":"auth-service","timestamp":"2025-11-20 17:09:56"}
+{"level":"info","message":"HTTP server closed","service":"auth-service","timestamp":"2025-11-20 17:09:56"}
+{"level":"warn","message":"MongoDB disconnected","service":"auth-service","timestamp":"2025-11-20 17:09:57"}
+{"level":"info","message":"MongoDB connection closed","service":"auth-service","timestamp":"2025-11-20 17:09:57"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"auth-service","timestamp":"2025-11-20 17:09:57"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:10:39 +0000] \"POST /api/auth/login HTTP/1.1\" 404 48 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 17:10:39"}
+{"level":"info","message":"Login attempt for: marie.martin@example.com","service":"auth-service","timestamp":"2025-11-20 17:10:45"}
+{"level":"warn","message":"Login failed: User not found - marie.martin@example.com","service":"auth-service","timestamp":"2025-11-20 17:10:45"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:10:45 +0000] \"POST /auth/login HTTP/1.1\" 401 61 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 17:10:45"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 17:12:12"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 17:12:12"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"address":"0.0.0.0","code":"EADDRINUSE","errno":-98,"level":"error","message":"Uncaught Exception: listen EADDRINUSE: address already in use 0.0.0.0:3001","port":3001,"service":"auth-service","stack":"Error: listen EADDRINUSE: address already in use 0.0.0.0:3001\n    at Server.setupListenHandle [as _listen2] (node:net:1817:16)\n    at listenInCluster (node:net:1865:12)\n    at doListen (node:net:2014:7)\n    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)","syscall":"listen","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"uncaughtException received. Starting graceful shutdown...","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"HTTP server closed","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"address":"0.0.0.0","code":"EADDRINUSE","errno":-98,"level":"error","message":"Uncaught Exception: listen EADDRINUSE: address already in use 0.0.0.0:3001","port":3001,"service":"auth-service","stack":"Error: listen EADDRINUSE: address already in use 0.0.0.0:3001\n    at Server.setupListenHandle [as _listen2] (node:net:1817:16)\n    at listenInCluster (node:net:1865:12)\n    at doListen (node:net:2014:7)\n    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)","syscall":"listen","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"uncaughtException received. Starting graceful shutdown...","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"HTTP server closed","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"address":"0.0.0.0","code":"EADDRINUSE","errno":-98,"level":"error","message":"Uncaught Exception: listen EADDRINUSE: address already in use 0.0.0.0:3001","port":3001,"service":"auth-service","stack":"Error: listen EADDRINUSE: address already in use 0.0.0.0:3001\n    at Server.setupListenHandle [as _listen2] (node:net:1817:16)\n    at listenInCluster (node:net:1865:12)\n    at doListen (node:net:2014:7)\n    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)","syscall":"listen","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"uncaughtException received. Starting graceful shutdown...","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"HTTP server closed","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"address":"0.0.0.0","code":"EADDRINUSE","errno":-98,"level":"error","message":"Uncaught Exception: listen EADDRINUSE: address already in use 0.0.0.0:3001","port":3001,"service":"auth-service","stack":"Error: listen EADDRINUSE: address already in use 0.0.0.0:3001\n    at Server.setupListenHandle [as _listen2] (node:net:1817:16)\n    at listenInCluster (node:net:1865:12)\n    at doListen (node:net:2014:7)\n    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)","syscall":"listen","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"uncaughtException received. Starting graceful shutdown...","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"HTTP server closed","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"address":"0.0.0.0","code":"EADDRINUSE","errno":-98,"level":"error","message":"Uncaught Exception: listen EADDRINUSE: address already in use 0.0.0.0:3001","port":3001,"service":"auth-service","stack":"Error: listen EADDRINUSE: address already in use 0.0.0.0:3001\n    at Server.setupListenHandle [as _listen2] (node:net:1817:16)\n    at listenInCluster (node:net:1865:12)\n    at doListen (node:net:2014:7)\n    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)","syscall":"listen","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"uncaughtException received. Starting graceful shutdown...","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"HTTP server closed","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"warn","message":"MongoDB disconnected","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"MongoDB connection closed","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"warn","message":"MongoDB disconnected","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"warn","message":"MongoDB disconnected","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"MongoDB connection closed","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"MongoDB connection closed","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"warn","message":"MongoDB disconnected","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"MongoDB connection closed","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"warn","message":"MongoDB disconnected","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"MongoDB connection closed","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"auth-service","timestamp":"2025-11-20 17:12:13"}
+{"level":"info","message":"Login attempt for: marie.martin@example.com","service":"auth-service","timestamp":"2025-11-20 17:13:11"}
+{"level":"warn","message":"Login failed: User not found - marie.martin@example.com","service":"auth-service","timestamp":"2025-11-20 17:13:11"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:13:11 +0000] \"POST /auth/login HTTP/1.1\" 401 61 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 17:13:11"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 17:42:55"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 17:42:55"}
+{"level":"info","message":"🚀 Auth Service running on 0.0.0.0:3001","service":"auth-service","timestamp":"2025-11-20 17:42:55"}
+{"level":"info","message":"Environment: development","service":"auth-service","timestamp":"2025-11-20 17:42:55"}
+{"level":"info","message":"Login attempt for: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 17:44:40"}
+{"level":"warn","message":"Login failed: User not found - jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 17:44:40"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:44:40 +0000] \"POST /auth/login HTTP/1.1\" 401 61 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 17:44:40"}
+{"level":"info","message":"New user registered: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 17:46:01"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:46:01 +0000] \"POST /auth/signup HTTP/1.1\" 201 160 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 17:46:01"}
+{"level":"info","message":"Login attempt for: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 17:46:01"}
+{"level":"info","message":"Login successful: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 17:46:01"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:46:01 +0000] \"POST /auth/login HTTP/1.1\" 200 382 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 17:46:01"}
+{"level":"info","message":"Login attempt for: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 17:46:09"}
+{"level":"info","message":"Login successful: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 17:46:09"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:46:09 +0000] \"POST /auth/login HTTP/1.1\" 200 382 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 17:46:09"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:46:09 +0000] \"GET /auth/me HTTP/1.1\" 200 685 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 17:46:09"}
+{"level":"info","message":"Login attempt for: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 17:46:16"}
+{"level":"info","message":"Login successful: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 17:46:16"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:46:16 +0000] \"POST /auth/login HTTP/1.1\" 200 382 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 17:46:16"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:46:16 +0000] \"GET /auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 17:46:16"}
+{"level":"info","message":"Login attempt for: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 17:46:31"}
+{"level":"info","message":"Login successful: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 17:46:31"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:46:31 +0000] \"POST /auth/login HTTP/1.1\" 200 382 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 17:46:31"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:46:31 +0000] \"GET /auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 17:46:31"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:47:21 +0000] \"POST /auth/forgot-password HTTP/1.1\" 404 48 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 17:47:21"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:47:28 +0000] \"POST /auth/forgot-password HTTP/1.1\" 404 48 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 17:47:28"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 17:48:05"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 17:48:05"}
+{"level":"info","message":"🚀 Auth Service running on 0.0.0.0:3001","service":"auth-service","timestamp":"2025-11-20 17:48:05"}
+{"level":"info","message":"Environment: development","service":"auth-service","timestamp":"2025-11-20 17:48:05"}
+{"level":"info","message":"SIGTERM received. Starting graceful shutdown...","service":"auth-service","timestamp":"2025-11-20 17:48:16"}
+{"level":"info","message":"HTTP server closed","service":"auth-service","timestamp":"2025-11-20 17:48:16"}
+{"level":"warn","message":"MongoDB disconnected","service":"auth-service","timestamp":"2025-11-20 17:48:16"}
+{"level":"info","message":"MongoDB connection closed","service":"auth-service","timestamp":"2025-11-20 17:48:16"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"auth-service","timestamp":"2025-11-20 17:48:16"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 17:49:36"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 17:49:36"}
+{"level":"info","message":"🚀 Auth Service running on 0.0.0.0:3001","service":"auth-service","timestamp":"2025-11-20 17:49:36"}
+{"level":"info","message":"Environment: development","service":"auth-service","timestamp":"2025-11-20 17:49:36"}
+{"level":"info","message":"Password reset token generated for: marie.martin@example.com","service":"auth-service","timestamp":"2025-11-20 17:49:55"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:49:55 +0000] \"POST /auth/forgot-password HTTP/1.1\" 200 94 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 17:49:55"}
+{"level":"info","message":"Password reset token generated for: marie.martin@example.com","service":"auth-service","timestamp":"2025-11-20 17:50:01"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:50:01 +0000] \"POST /auth/forgot-password HTTP/1.1\" 200 94 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 17:50:01"}
+{"level":"info","message":"Login attempt for: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 17:58:36"}
+{"level":"info","message":"Login successful: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 17:58:36"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:58:36 +0000] \"POST /auth/login HTTP/1.1\" 200 382 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 17:58:36"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:58:36 +0000] \"GET /auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 17:58:36"}
+{"level":"info","message":"New user registered: jamil@te2st1.com","service":"auth-service","timestamp":"2025-11-20 17:58:54"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:58:54 +0000] \"POST /auth/signup HTTP/1.1\" 201 167 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 17:58:54"}
+{"level":"info","message":"Login attempt for: jamil@te2st1.com","service":"auth-service","timestamp":"2025-11-20 17:58:54"}
+{"level":"info","message":"Login successful: jamil@te2st1.com","service":"auth-service","timestamp":"2025-11-20 17:58:54"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:58:54 +0000] \"POST /auth/login HTTP/1.1\" 200 390 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 17:58:54"}
+{"level":"info","message":"Login attempt for: marie.martin@example.com","service":"auth-service","timestamp":"2025-11-20 18:00:07"}
+{"level":"info","message":"Login successful: marie.martin@example.com","service":"auth-service","timestamp":"2025-11-20 18:00:07"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:00:07 +0000] \"POST /auth/login HTTP/1.1\" 200 440 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 18:00:07"}
+{"level":"info","message":"Login attempt for: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 18:04:53"}
+{"level":"info","message":"Login successful: jamil@test1.com","service":"auth-service","timestamp":"2025-11-20 18:04:53"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:04:53 +0000] \"POST /auth/login HTTP/1.1\" 200 382 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 18:04:53"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:04:53 +0000] \"GET /auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 18:04:53"}
+{"level":"info","message":"New user registered: jamil@test31.com","service":"auth-service","timestamp":"2025-11-20 18:05:15"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:05:15 +0000] \"POST /auth/signup HTTP/1.1\" 201 166 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 18:05:15"}
+{"level":"info","message":"Login attempt for: jamil@test31.com","service":"auth-service","timestamp":"2025-11-20 18:05:15"}
+{"level":"info","message":"Login successful: jamil@test31.com","service":"auth-service","timestamp":"2025-11-20 18:05:15"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:05:15 +0000] \"POST /auth/login HTTP/1.1\" 200 389 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 18:05:15"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 18:06:40"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 18:06:40"}
+{"level":"info","message":"🚀 Auth Service running on 0.0.0.0:3001","service":"auth-service","timestamp":"2025-11-20 18:06:40"}
+{"level":"info","message":"Environment: development","service":"auth-service","timestamp":"2025-11-20 18:06:40"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:06:48 +0000] \"GET /auth/me HTTP/1.1\" 401 44 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 18:06:48"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:07:49 +0000] \"GET /auth/me HTTP/1.1\" 200 691 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 18:07:49"}
+{"level":"info","message":"Login attempt for: jamil@test31.com","service":"auth-service","timestamp":"2025-11-20 18:08:01"}
+{"level":"info","message":"Login successful: jamil@test31.com","service":"auth-service","timestamp":"2025-11-20 18:08:01"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:08:01 +0000] \"POST /auth/login HTTP/1.1\" 200 389 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 18:08:01"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:08:01 +0000] \"GET /auth/me HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"auth-service","timestamp":"2025-11-20 18:08:01"}
+{"level":"info","message":"SIGTERM received. Starting graceful shutdown...","service":"auth-service","timestamp":"2025-11-20 18:08:52"}
+{"level":"info","message":"HTTP server closed","service":"auth-service","timestamp":"2025-11-20 18:08:52"}
+{"level":"warn","message":"MongoDB disconnected","service":"auth-service","timestamp":"2025-11-20 18:08:52"}
+{"level":"info","message":"MongoDB connection closed","service":"auth-service","timestamp":"2025-11-20 18:08:52"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"auth-service","timestamp":"2025-11-20 18:08:52"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 18:11:42"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 18:11:42"}
+{"level":"info","message":"🚀 Auth Service running on 0.0.0.0:3001","service":"auth-service","timestamp":"2025-11-20 18:11:42"}
+{"level":"info","message":"Environment: development","service":"auth-service","timestamp":"2025-11-20 18:11:42"}
+{"level":"info","message":"Connected to MongoDB (Auth Service)","service":"auth-service","timestamp":"2025-11-20 18:18:19"}
+{"level":"info","message":"Connected to RabbitMQ","service":"auth-service","timestamp":"2025-11-20 18:18:19"}
+{"level":"info","message":"🚀 Auth Service running on 0.0.0.0:3001","service":"auth-service","timestamp":"2025-11-20 18:18:19"}
+{"level":"info","message":"Environment: development","service":"auth-service","timestamp":"2025-11-20 18:18:19"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:18:24 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 18:18:24"}
+{"body":"{\"email\":\"marie.martin@example.com\",\"password\":\"Password123\\!\"}","expose":true,"level":"error","message":"Unhandled error: Bad escaped character in JSON at position 60 (line 1 column 61)","service":"auth-service","stack":"SyntaxError: Bad escaped character in JSON at position 60 (line 1 column 61)\n    at JSON.parse (<anonymous>)\n    at parse (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/body-parser/lib/types/json.js:92:19)\n    at /home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/body-parser/lib/read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)\n    at invokeCallback (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/raw-body/index.js:238:16)\n    at done (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/raw-body/index.js:227:7)\n    at IncomingMessage.onEnd (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/raw-body/index.js:287:7)\n    at IncomingMessage.emit (node:events:519:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)","status":400,"statusCode":400,"timestamp":"2025-11-20 18:18:59","type":"entity.parse.failed"}
+{"body":"{\"email\":\"marie.martin@example.com\",\"password\":\"Password123\\!\"}","expose":true,"level":"error","message":"Unhandled error: Bad escaped character in JSON at position 60 (line 1 column 61)","service":"auth-service","stack":"SyntaxError: Bad escaped character in JSON at position 60 (line 1 column 61)\n    at JSON.parse (<anonymous>)\n    at parse (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/body-parser/lib/types/json.js:92:19)\n    at /home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/body-parser/lib/read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)\n    at invokeCallback (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/raw-body/index.js:238:16)\n    at done (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/raw-body/index.js:227:7)\n    at IncomingMessage.onEnd (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/raw-body/index.js:287:7)\n    at IncomingMessage.emit (node:events:519:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)","status":400,"statusCode":400,"timestamp":"2025-11-20 18:19:04","type":"entity.parse.failed"}
+{"body":"{\"email\":\"marie.martin@example.com\",\"password\":\"Password123\\!\"}","expose":true,"level":"error","message":"Unhandled error: Bad escaped character in JSON at position 60 (line 1 column 61)","service":"auth-service","stack":"SyntaxError: Bad escaped character in JSON at position 60 (line 1 column 61)\n    at JSON.parse (<anonymous>)\n    at parse (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/body-parser/lib/types/json.js:92:19)\n    at /home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/body-parser/lib/read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)\n    at invokeCallback (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/raw-body/index.js:238:16)\n    at done (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/raw-body/index.js:227:7)\n    at IncomingMessage.onEnd (/home/arwa/hopTrip/hometrip-microservices/services/auth-service/node_modules/raw-body/index.js:287:7)\n    at IncomingMessage.emit (node:events:519:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)","status":400,"statusCode":400,"timestamp":"2025-11-20 18:19:18","type":"entity.parse.failed"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:24:21 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 18:24:21"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:25:25 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 18:25:25"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:26:12 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 18:26:12"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:28:58 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 18:28:58"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:29:21 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 18:29:21"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:29:49 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 18:29:49"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:30:13 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 18:30:13"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:30:45 +0000] \"GET /health HTTP/1.1\" 200 102 \"-\" \"curl/7.81.0\"","service":"auth-service","timestamp":"2025-11-20 18:30:45"}
+{"level":"info","message":"SIGTERM received. Starting graceful shutdown...","service":"auth-service","timestamp":"2025-11-20 18:51:51"}
+{"level":"info","message":"HTTP server closed","service":"auth-service","timestamp":"2025-11-20 18:51:51"}
+{"level":"warn","message":"MongoDB disconnected","service":"auth-service","timestamp":"2025-11-20 18:51:51"}
+{"level":"info","message":"MongoDB connection closed","service":"auth-service","timestamp":"2025-11-20 18:51:51"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"auth-service","timestamp":"2025-11-20 18:51:51"}

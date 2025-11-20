@@ -377,3 +377,84 @@
   "env": "development"
 }
 2025-11-19 23:50:48 [info]: SIGTERM received, shutting down gracefully 
+2025-11-20 14:39:40 [warn]: Redis connection failed, running without horizontal scaling support {
+  "error": "connect ECONNREFUSED 127.0.0.1:6379"
+}
+2025-11-20 14:39:40 [info]: Socket.io server initialized 
+2025-11-20 14:39:40 [info]: Connected to RabbitMQ {
+  "host": "localhost",
+  "port": 5672
+}
+2025-11-20 14:39:40 [info]: Subscribed to event {
+  "routingKey": "message.sent",
+  "queue": "websocket.message.sent"
+}
+2025-11-20 14:39:40 [info]: Subscribed to event {
+  "routingKey": "booking.confirmed",
+  "queue": "websocket.booking.confirmed"
+}
+2025-11-20 14:39:40 [info]: Subscribed to event {
+  "routingKey": "notification.created",
+  "queue": "websocket.notification.created"
+}
+2025-11-20 14:39:40 [info]: Event subscriptions setup complete 
+2025-11-20 14:39:40 [info]: WebSocket Gateway started {
+  "host": "0.0.0.0",
+  "port": 3011,
+  "env": "development"
+}
+2025-11-20 17:43:26 [warn]: Redis connection failed, running without horizontal scaling support {
+  "error": "connect ECONNREFUSED 127.0.0.1:6379"
+}
+2025-11-20 17:43:26 [info]: Socket.io server initialized 
+2025-11-20 17:43:26 [info]: Connected to RabbitMQ {
+  "host": "localhost",
+  "port": 5672
+}
+2025-11-20 17:43:26 [info]: Subscribed to event {
+  "routingKey": "message.sent",
+  "queue": "websocket.message.sent"
+}
+2025-11-20 17:43:26 [info]: Subscribed to event {
+  "routingKey": "booking.confirmed",
+  "queue": "websocket.booking.confirmed"
+}
+2025-11-20 17:43:26 [info]: Subscribed to event {
+  "routingKey": "notification.created",
+  "queue": "websocket.notification.created"
+}
+2025-11-20 17:43:26 [info]: Event subscriptions setup complete 
+2025-11-20 17:43:26 [info]: WebSocket Gateway started {
+  "host": "0.0.0.0",
+  "port": 3011,
+  "env": "development"
+}
+2025-11-20 18:09:14 [info]: SIGTERM received, shutting down gracefully 
+2025-11-20 18:12:13 [warn]: Redis connection failed, running without horizontal scaling support {
+  "error": "connect ECONNREFUSED 127.0.0.1:6379"
+}
+2025-11-20 18:12:13 [info]: Socket.io server initialized 
+2025-11-20 18:12:13 [info]: Connected to RabbitMQ {
+  "host": "localhost",
+  "port": 5672
+}
+2025-11-20 18:12:13 [info]: Subscribed to event {
+  "routingKey": "message.sent",
+  "queue": "websocket.message.sent"
+}
+2025-11-20 18:12:13 [info]: Subscribed to event {
+  "routingKey": "booking.confirmed",
+  "queue": "websocket.booking.confirmed"
+}
+2025-11-20 18:12:13 [info]: Subscribed to event {
+  "routingKey": "notification.created",
+  "queue": "websocket.notification.created"
+}
+2025-11-20 18:12:13 [info]: Event subscriptions setup complete 
+2025-11-20 18:12:13 [info]: WebSocket Gateway started {
+  "host": "0.0.0.0",
+  "port": 3011,
+  "env": "development"
+}
+2025-11-20 18:52:13 [info]: SIGTERM received, shutting down gracefully 
+2025-11-20 18:52:13 [warn]: RabbitMQ connection closed 

@@ -133,3 +133,56 @@
 {"level":"info","message":"Event subscriptions initialized","service":"payment-service","timestamp":"2025-11-19 23:35:19"}
 {"level":"info","message":"Payment Service started","nodeEnv":"development","port":"3005","service":"payment-service","timestamp":"2025-11-19 23:35:19"}
 {"level":"info","message":"SIGTERM signal received: closing HTTP server","service":"payment-service","timestamp":"2025-11-19 23:50:48"}
+{"level":"info","message":"Connecting to MongoDB...","service":"payment-service","timestamp":"2025-11-20 14:39:21","uri":"mongodb+srv://***:***@cluster0.hxvjyu7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"}
+{"level":"info","message":"Mongoose connected to MongoDB","service":"payment-service","timestamp":"2025-11-20 14:39:22"}
+{"level":"info","message":"MongoDB connected successfully","service":"payment-service","timestamp":"2025-11-20 14:39:22"}
+{"level":"info","message":"Subscribed to event: booking.created","service":"payment-service","timestamp":"2025-11-20 14:39:22"}
+{"error":"getaddrinfo EAI_AGAIN event-bus","level":"warn","message":"Failed to register subscription with event bus: booking.created","service":"payment-service","timestamp":"2025-11-20 14:39:22"}
+{"level":"info","message":"Subscribed to event: booking.cancelled","service":"payment-service","timestamp":"2025-11-20 14:39:22"}
+{"error":"getaddrinfo EAI_AGAIN event-bus","level":"warn","message":"Failed to register subscription with event bus: booking.cancelled","service":"payment-service","timestamp":"2025-11-20 14:39:22"}
+{"level":"info","message":"Event subscriptions initialized","service":"payment-service","timestamp":"2025-11-20 14:39:22"}
+{"level":"info","message":"Payment Service started","nodeEnv":"development","port":"3005","service":"payment-service","timestamp":"2025-11-20 14:39:22"}
+{"level":"warn","message":"Mongoose disconnected from MongoDB","service":"payment-service","timestamp":"2025-11-20 15:14:45"}
+{"level":"info","message":"Mongoose connected to MongoDB","service":"payment-service","timestamp":"2025-11-20 15:14:56"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /health","method":"GET","path":"/health","query":{},"service":"payment-service","timestamp":"2025-11-20 15:52:45"}
+{"duration":"3ms","level":"info","message":"GET /health - 200","method":"GET","path":"/health","service":"payment-service","statusCode":200,"timestamp":"2025-11-20 15:52:45"}
+{"level":"info","message":"Connecting to MongoDB...","service":"payment-service","timestamp":"2025-11-20 17:43:08","uri":"mongodb+srv://***:***@cluster0.hxvjyu7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"}
+{"level":"info","message":"Mongoose connected to MongoDB","service":"payment-service","timestamp":"2025-11-20 17:43:08"}
+{"level":"info","message":"MongoDB connected successfully","service":"payment-service","timestamp":"2025-11-20 17:43:08"}
+{"level":"info","message":"Subscribed to event: booking.created","service":"payment-service","timestamp":"2025-11-20 17:43:08"}
+{"error":"getaddrinfo EAI_AGAIN event-bus","level":"warn","message":"Failed to register subscription with event bus: booking.created","service":"payment-service","timestamp":"2025-11-20 17:43:08"}
+{"level":"info","message":"Subscribed to event: booking.cancelled","service":"payment-service","timestamp":"2025-11-20 17:43:08"}
+{"error":"getaddrinfo EAI_AGAIN event-bus","level":"warn","message":"Failed to register subscription with event bus: booking.cancelled","service":"payment-service","timestamp":"2025-11-20 17:43:08"}
+{"level":"info","message":"Event subscriptions initialized","service":"payment-service","timestamp":"2025-11-20 17:43:08"}
+{"level":"info","message":"Payment Service started","nodeEnv":"development","port":"3005","service":"payment-service","timestamp":"2025-11-20 17:43:08"}
+{"level":"info","message":"SIGTERM signal received: closing HTTP server","service":"payment-service","timestamp":"2025-11-20 18:09:01"}
+{"level":"info","message":"Connecting to MongoDB...","service":"payment-service","timestamp":"2025-11-20 18:11:54","uri":"mongodb+srv://***:***@cluster0.hxvjyu7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"}
+{"level":"info","message":"Mongoose connected to MongoDB","service":"payment-service","timestamp":"2025-11-20 18:11:54"}
+{"level":"info","message":"MongoDB connected successfully","service":"payment-service","timestamp":"2025-11-20 18:11:54"}
+{"level":"info","message":"Subscribed to event: booking.created","service":"payment-service","timestamp":"2025-11-20 18:11:54"}
+{"error":"getaddrinfo EAI_AGAIN event-bus","level":"warn","message":"Failed to register subscription with event bus: booking.created","service":"payment-service","timestamp":"2025-11-20 18:11:54"}
+{"level":"info","message":"Subscribed to event: booking.cancelled","service":"payment-service","timestamp":"2025-11-20 18:11:54"}
+{"error":"getaddrinfo EAI_AGAIN event-bus","level":"warn","message":"Failed to register subscription with event bus: booking.cancelled","service":"payment-service","timestamp":"2025-11-20 18:11:54"}
+{"level":"info","message":"Event subscriptions initialized","service":"payment-service","timestamp":"2025-11-20 18:11:54"}
+{"level":"info","message":"Payment Service started","nodeEnv":"development","port":"3005","service":"payment-service","timestamp":"2025-11-20 18:11:54"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /health","method":"GET","path":"/health","query":{},"service":"payment-service","timestamp":"2025-11-20 18:25:25"}
+{"duration":"3ms","level":"info","message":"GET /health - 200","method":"GET","path":"/health","service":"payment-service","statusCode":200,"timestamp":"2025-11-20 18:25:25"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /health","method":"GET","path":"/health","query":{},"service":"payment-service","timestamp":"2025-11-20 18:25:32"}
+{"duration":"1ms","level":"info","message":"GET /health - 200","method":"GET","path":"/health","service":"payment-service","statusCode":200,"timestamp":"2025-11-20 18:25:32"}
+{"ip":"::1","level":"info","message":"GET /health","method":"GET","path":"/health","query":{},"service":"payment-service","timestamp":"2025-11-20 18:26:00"}
+{"duration":"1ms","level":"info","message":"GET /health - 200","method":"GET","path":"/health","service":"payment-service","statusCode":200,"timestamp":"2025-11-20 18:26:00"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /health","method":"GET","path":"/health","query":{},"service":"payment-service","timestamp":"2025-11-20 18:26:00"}
+{"duration":"1ms","level":"info","message":"GET /health - 200","method":"GET","path":"/health","service":"payment-service","statusCode":200,"timestamp":"2025-11-20 18:26:00"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /health","method":"GET","path":"/health","query":{},"service":"payment-service","timestamp":"2025-11-20 18:26:12"}
+{"duration":"1ms","level":"info","message":"GET /health - 200","method":"GET","path":"/health","service":"payment-service","statusCode":200,"timestamp":"2025-11-20 18:26:12"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /health","method":"GET","path":"/health","query":{},"service":"payment-service","timestamp":"2025-11-20 18:28:58"}
+{"duration":"1ms","level":"info","message":"GET /health - 200","method":"GET","path":"/health","service":"payment-service","statusCode":200,"timestamp":"2025-11-20 18:28:58"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /health","method":"GET","path":"/health","query":{},"service":"payment-service","timestamp":"2025-11-20 18:29:21"}
+{"duration":"1ms","level":"info","message":"GET /health - 200","method":"GET","path":"/health","service":"payment-service","statusCode":200,"timestamp":"2025-11-20 18:29:21"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /health","method":"GET","path":"/health","query":{},"service":"payment-service","timestamp":"2025-11-20 18:29:49"}
+{"duration":"1ms","level":"info","message":"GET /health - 200","method":"GET","path":"/health","service":"payment-service","statusCode":200,"timestamp":"2025-11-20 18:29:49"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /health","method":"GET","path":"/health","query":{},"service":"payment-service","timestamp":"2025-11-20 18:30:13"}
+{"duration":"1ms","level":"info","message":"GET /health - 200","method":"GET","path":"/health","service":"payment-service","statusCode":200,"timestamp":"2025-11-20 18:30:13"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /health","method":"GET","path":"/health","query":{},"service":"payment-service","timestamp":"2025-11-20 18:30:45"}
+{"duration":"1ms","level":"info","message":"GET /health - 200","method":"GET","path":"/health","service":"payment-service","statusCode":200,"timestamp":"2025-11-20 18:30:45"}
+{"level":"info","message":"SIGTERM signal received: closing HTTP server","service":"payment-service","timestamp":"2025-11-20 18:52:00"}

@@ -345,3 +345,81 @@
 {"level":"info","message":"User created: 691e4819c414fdf3dc1711dd with role user","service":"analytics-service","timestamp":"2025-11-19 23:43:37"}
 {"level":"info","message":"SIGTERM received. Starting graceful shutdown...","service":"analytics-service","timestamp":"2025-11-19 23:50:48"}
 {"level":"info","message":"HTTP server closed","service":"analytics-service","timestamp":"2025-11-19 23:50:48"}
+{"level":"info","message":"Connected to MongoDB (Analytics Service)","service":"analytics-service","timestamp":"2025-11-20 14:39:37"}
+{"level":"info","message":"Connected to RabbitMQ","service":"analytics-service","timestamp":"2025-11-20 14:39:37"}
+{"level":"info","message":"Subscribed to event: booking.created","service":"analytics-service","timestamp":"2025-11-20 14:39:37"}
+{"level":"info","message":"Subscribed to event: booking.confirmed","service":"analytics-service","timestamp":"2025-11-20 14:39:37"}
+{"level":"info","message":"Subscribed to event: booking.cancelled","service":"analytics-service","timestamp":"2025-11-20 14:39:37"}
+{"level":"info","message":"Subscribed to event: payment.succeeded","service":"analytics-service","timestamp":"2025-11-20 14:39:37"}
+{"level":"info","message":"Subscribed to event: listing.created","service":"analytics-service","timestamp":"2025-11-20 14:39:37"}
+{"level":"info","message":"Subscribed to event: listing.viewed","service":"analytics-service","timestamp":"2025-11-20 14:39:37"}
+{"level":"info","message":"Subscribed to event: user.created","service":"analytics-service","timestamp":"2025-11-20 14:39:37"}
+{"level":"info","message":"Subscribed to event: review.created","service":"analytics-service","timestamp":"2025-11-20 14:39:37"}
+{"level":"info","message":"Event subscriptions initialized","service":"analytics-service","timestamp":"2025-11-20 14:39:37"}
+{"level":"info","message":"Analytics Service running on 0.0.0.0:3010","service":"analytics-service","timestamp":"2025-11-20 14:39:37"}
+{"level":"info","message":"Environment: development","service":"analytics-service","timestamp":"2025-11-20 14:39:37"}
+{"level":"warn","message":"MongoDB disconnected","service":"analytics-service","timestamp":"2025-11-20 15:14:41"}
+{"level":"info","message":"MongoDB reconnected","service":"analytics-service","timestamp":"2025-11-20 15:14:51"}
+{"level":"info","message":"User created: 691f2577c9f1d748b55aab31 with role user","service":"analytics-service","timestamp":"2025-11-20 15:28:07"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:31:22 +0000] \"GET /analytics/host/stats HTTP/1.1\" 401 43 \"-\" \"curl/7.81.0\"","service":"analytics-service","timestamp":"2025-11-20 15:31:22"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:31:33 +0000] \"GET /health HTTP/1.1\" 200 107 \"-\" \"curl/7.81.0\"","service":"analytics-service","timestamp":"2025-11-20 15:31:33"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:31:33 +0000] \"GET /analytics/host/stats HTTP/1.1\" 401 53 \"-\" \"curl/7.81.0\"","service":"analytics-service","timestamp":"2025-11-20 15:31:33"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:32:30 +0000] \"GET /analytics/host/stats?period=7d HTTP/1.1\" 401 53 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"analytics-service","timestamp":"2025-11-20 15:32:30"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:52:45 +0000] \"GET /health HTTP/1.1\" 200 107 \"-\" \"curl/7.81.0\"","service":"analytics-service","timestamp":"2025-11-20 15:52:45"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:58:50 +0000] \"GET /analytics/host/stats?period=7d HTTP/1.1\" 401 53 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"analytics-service","timestamp":"2025-11-20 15:58:50"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:58:50 +0000] \"GET /analytics/host/stats?period=7d HTTP/1.1\" 401 53 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"analytics-service","timestamp":"2025-11-20 15:58:50"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:58:55 +0000] \"GET /analytics/host/stats?period=7d HTTP/1.1\" 401 53 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"analytics-service","timestamp":"2025-11-20 15:58:55"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:58:55 +0000] \"GET /analytics/host/stats?period=7d HTTP/1.1\" 401 53 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"analytics-service","timestamp":"2025-11-20 15:58:55"}
+{"level":"info","message":"User created: 691f35bb3ffeab6222088b97 with role user","service":"analytics-service","timestamp":"2025-11-20 16:37:31"}
+{"level":"info","message":"Connected to MongoDB (Analytics Service)","service":"analytics-service","timestamp":"2025-11-20 17:43:23"}
+{"level":"info","message":"Connected to RabbitMQ","service":"analytics-service","timestamp":"2025-11-20 17:43:23"}
+{"level":"info","message":"Subscribed to event: booking.created","service":"analytics-service","timestamp":"2025-11-20 17:43:23"}
+{"level":"info","message":"Subscribed to event: booking.confirmed","service":"analytics-service","timestamp":"2025-11-20 17:43:24"}
+{"level":"info","message":"Subscribed to event: booking.cancelled","service":"analytics-service","timestamp":"2025-11-20 17:43:24"}
+{"level":"info","message":"Subscribed to event: payment.succeeded","service":"analytics-service","timestamp":"2025-11-20 17:43:24"}
+{"level":"info","message":"Subscribed to event: listing.created","service":"analytics-service","timestamp":"2025-11-20 17:43:24"}
+{"level":"info","message":"Subscribed to event: listing.viewed","service":"analytics-service","timestamp":"2025-11-20 17:43:24"}
+{"level":"info","message":"Subscribed to event: user.created","service":"analytics-service","timestamp":"2025-11-20 17:43:24"}
+{"level":"info","message":"Subscribed to event: review.created","service":"analytics-service","timestamp":"2025-11-20 17:43:24"}
+{"level":"info","message":"Event subscriptions initialized","service":"analytics-service","timestamp":"2025-11-20 17:43:24"}
+{"level":"info","message":"Analytics Service running on 0.0.0.0:3010","service":"analytics-service","timestamp":"2025-11-20 17:43:24"}
+{"level":"info","message":"Environment: development","service":"analytics-service","timestamp":"2025-11-20 17:43:24"}
+{"level":"info","message":"User created: 691f45c9368a6b1da7b26c22 with role user","service":"analytics-service","timestamp":"2025-11-20 17:46:01"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:46:07 +0000] \"GET /analytics/host/stats?period=7d HTTP/1.1\" 401 43 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"analytics-service","timestamp":"2025-11-20 17:46:07"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:46:07 +0000] \"GET /analytics/host/stats?period=7d HTTP/1.1\" 401 43 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"analytics-service","timestamp":"2025-11-20 17:46:07"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:46:28 +0000] \"GET /analytics/host/stats?period=7d HTTP/1.1\" 401 53 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"analytics-service","timestamp":"2025-11-20 17:46:28"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:46:28 +0000] \"GET /analytics/host/stats?period=7d HTTP/1.1\" 401 53 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"analytics-service","timestamp":"2025-11-20 17:46:28"}
+{"level":"info","message":"User created: 691f48ce61b4169e8d9b91ba with role user","service":"analytics-service","timestamp":"2025-11-20 17:58:54"}
+{"level":"info","message":"User created: 691f4a4b61b4169e8d9b91c1 with role user","service":"analytics-service","timestamp":"2025-11-20 18:05:15"}
+{"level":"info","message":"SIGTERM received. Starting graceful shutdown...","service":"analytics-service","timestamp":"2025-11-20 18:09:11"}
+{"level":"info","message":"HTTP server closed","service":"analytics-service","timestamp":"2025-11-20 18:09:11"}
+{"level":"warn","message":"MongoDB disconnected","service":"analytics-service","timestamp":"2025-11-20 18:09:11"}
+{"level":"info","message":"MongoDB connection closed","service":"analytics-service","timestamp":"2025-11-20 18:09:11"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"analytics-service","timestamp":"2025-11-20 18:09:11"}
+{"level":"info","message":"Connected to MongoDB (Analytics Service)","service":"analytics-service","timestamp":"2025-11-20 18:12:10"}
+{"level":"info","message":"Connected to RabbitMQ","service":"analytics-service","timestamp":"2025-11-20 18:12:10"}
+{"level":"info","message":"Subscribed to event: booking.created","service":"analytics-service","timestamp":"2025-11-20 18:12:10"}
+{"level":"info","message":"Subscribed to event: booking.confirmed","service":"analytics-service","timestamp":"2025-11-20 18:12:10"}
+{"level":"info","message":"Subscribed to event: booking.cancelled","service":"analytics-service","timestamp":"2025-11-20 18:12:10"}
+{"level":"info","message":"Subscribed to event: payment.succeeded","service":"analytics-service","timestamp":"2025-11-20 18:12:10"}
+{"level":"info","message":"Subscribed to event: listing.created","service":"analytics-service","timestamp":"2025-11-20 18:12:10"}
+{"level":"info","message":"Subscribed to event: listing.viewed","service":"analytics-service","timestamp":"2025-11-20 18:12:10"}
+{"level":"info","message":"Subscribed to event: user.created","service":"analytics-service","timestamp":"2025-11-20 18:12:10"}
+{"level":"info","message":"Subscribed to event: review.created","service":"analytics-service","timestamp":"2025-11-20 18:12:10"}
+{"level":"info","message":"Event subscriptions initialized","service":"analytics-service","timestamp":"2025-11-20 18:12:10"}
+{"level":"info","message":"Analytics Service running on 0.0.0.0:3010","service":"analytics-service","timestamp":"2025-11-20 18:12:10"}
+{"level":"info","message":"Environment: development","service":"analytics-service","timestamp":"2025-11-20 18:12:10"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:23:12 +0000] \"GET /analytics/host/stats?period=7d HTTP/1.1\" 401 53 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"analytics-service","timestamp":"2025-11-20 18:23:12"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:23:12 +0000] \"GET /analytics/host/stats?period=7d HTTP/1.1\" 401 53 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"analytics-service","timestamp":"2025-11-20 18:23:12"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:25:25 +0000] \"GET /health HTTP/1.1\" 200 107 \"-\" \"curl/7.81.0\"","service":"analytics-service","timestamp":"2025-11-20 18:25:25"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:26:12 +0000] \"GET /health HTTP/1.1\" 200 107 \"-\" \"curl/7.81.0\"","service":"analytics-service","timestamp":"2025-11-20 18:26:12"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:28:58 +0000] \"GET /health HTTP/1.1\" 200 107 \"-\" \"curl/7.81.0\"","service":"analytics-service","timestamp":"2025-11-20 18:28:58"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:29:21 +0000] \"GET /health HTTP/1.1\" 200 107 \"-\" \"curl/7.81.0\"","service":"analytics-service","timestamp":"2025-11-20 18:29:21"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:29:49 +0000] \"GET /health HTTP/1.1\" 200 107 \"-\" \"curl/7.81.0\"","service":"analytics-service","timestamp":"2025-11-20 18:29:49"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:30:13 +0000] \"GET /health HTTP/1.1\" 200 107 \"-\" \"curl/7.81.0\"","service":"analytics-service","timestamp":"2025-11-20 18:30:13"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:30:45 +0000] \"GET /health HTTP/1.1\" 200 107 \"-\" \"curl/7.81.0\"","service":"analytics-service","timestamp":"2025-11-20 18:30:45"}
+{"level":"info","message":"SIGTERM received. Starting graceful shutdown...","service":"analytics-service","timestamp":"2025-11-20 18:52:11"}
+{"level":"info","message":"HTTP server closed","service":"analytics-service","timestamp":"2025-11-20 18:52:11"}
+{"level":"warn","message":"MongoDB disconnected","service":"analytics-service","timestamp":"2025-11-20 18:52:11"}
+{"level":"info","message":"MongoDB connection closed","service":"analytics-service","timestamp":"2025-11-20 18:52:11"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"analytics-service","timestamp":"2025-11-20 18:52:11"}

@@ -1,0 +1,28 @@
+{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017","reason":{"commonWireVersion":0,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"logicalSessionTimeoutMinutes":null,"maxElectionId":null,"maxSetVersion":null,"servers":{},"setName":null,"stale":false,"type":"Unknown"},"service":"experience-service","stack":"MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017\n    at _handleConnectionErrors (/home/arwa/hopTrip/hometrip-microservices/services/experience-service/node_modules/mongoose/lib/connection.js:816:11)\n    at NativeConnection.openUri (/home/arwa/hopTrip/hometrip-microservices/services/experience-service/node_modules/mongoose/lib/connection.js:791:11)\n    at async connectDB (/home/arwa/hopTrip/hometrip-microservices/services/experience-service/src/config/database.js:15:5)\n    at async startServer (/home/arwa/hopTrip/hometrip-microservices/services/experience-service/src/index.js:103:5)","timestamp":"2025-11-20 15:17:19"}
+{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017","reason":{"commonWireVersion":0,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"logicalSessionTimeoutMinutes":null,"maxElectionId":null,"maxSetVersion":null,"servers":{},"setName":null,"stale":false,"type":"Unknown"},"service":"experience-service","stack":"MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017\n    at _handleConnectionErrors (/home/arwa/hopTrip/hometrip-microservices/services/experience-service/node_modules/mongoose/lib/connection.js:816:11)\n    at NativeConnection.openUri (/home/arwa/hopTrip/hometrip-microservices/services/experience-service/node_modules/mongoose/lib/connection.js:791:11)\n    at async connectDB (/home/arwa/hopTrip/hometrip-microservices/services/experience-service/src/config/database.js:15:5)\n    at async startServer (/home/arwa/hopTrip/hometrip-microservices/services/experience-service/src/index.js:103:5)","timestamp":"2025-11-20 15:21:57"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-02.hxvjyu7.mongodb.net","service":"experience-service","timestamp":"2025-11-20 15:22:30"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"experience-service","timestamp":"2025-11-20 15:22:30"}
+{"level":"info","message":"✅ Subscribed to pattern: booking.completed","service":"experience-service","timestamp":"2025-11-20 15:22:30"}
+{"level":"info","message":"✅ Subscribed to pattern: user.deleted","service":"experience-service","timestamp":"2025-11-20 15:22:30"}
+{"level":"info","message":"✅ experience-service running on port 4011","service":"experience-service","timestamp":"2025-11-20 15:22:30"}
+{"level":"info","message":"📚 API Docs: http://localhost:4011/api-docs","service":"experience-service","timestamp":"2025-11-20 15:22:30"}
+{"level":"info","message":"🏥 Health check: http://localhost:4011/health","service":"experience-service","timestamp":"2025-11-20 15:22:30"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-02.hxvjyu7.mongodb.net","service":"cancellation-policy-service","timestamp":"2025-11-20 15:49:38"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"cancellation-policy-service","timestamp":"2025-11-20 15:49:38"}
+{"level":"info","message":"✅ Subscribed to pattern: booking.completed","service":"cancellation-policy-service","timestamp":"2025-11-20 15:49:38"}
+{"level":"info","message":"✅ Subscribed to pattern: user.deleted","service":"cancellation-policy-service","timestamp":"2025-11-20 15:49:38"}
+{"level":"info","message":"✅ cancellation-policy-service running on port 4016","service":"cancellation-policy-service","timestamp":"2025-11-20 15:49:38"}
+{"level":"info","message":"📚 API Docs: http://localhost:4016/api-docs","service":"cancellation-policy-service","timestamp":"2025-11-20 15:49:38"}
+{"level":"info","message":"🏥 Health check: http://localhost:4016/health","service":"cancellation-policy-service","timestamp":"2025-11-20 15:49:38"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-00.hxvjyu7.mongodb.net","service":"cancellation-policy-service","timestamp":"2025-11-20 17:43:49"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"cancellation-policy-service","timestamp":"2025-11-20 17:43:49"}
+{"level":"info","message":"✅ Subscribed to pattern: booking.completed","service":"cancellation-policy-service","timestamp":"2025-11-20 17:43:49"}
+{"level":"info","message":"✅ Subscribed to pattern: user.deleted","service":"cancellation-policy-service","timestamp":"2025-11-20 17:43:49"}
+{"level":"info","message":"✅ cancellation-policy-service running on port 4016","service":"cancellation-policy-service","timestamp":"2025-11-20 17:43:49"}
+{"level":"info","message":"📚 API Docs: http://localhost:4016/api-docs","service":"cancellation-policy-service","timestamp":"2025-11-20 17:43:49"}
+{"level":"info","message":"🏥 Health check: http://localhost:4016/health","service":"cancellation-policy-service","timestamp":"2025-11-20 17:43:49"}
+{"level":"info","message":"SIGTERM received. Closing server gracefully...","service":"cancellation-policy-service","timestamp":"2025-11-20 18:09:29"}
+{"level":"info","message":"HTTP server closed","service":"cancellation-policy-service","timestamp":"2025-11-20 18:09:29"}
+{"level":"warn","message":"MongoDB disconnected. Attempting to reconnect...","service":"cancellation-policy-service","timestamp":"2025-11-20 18:09:29"}
+{"level":"info","message":"MongoDB connection closed","service":"cancellation-policy-service","timestamp":"2025-11-20 18:09:29"}
+{"level":"warn","message":"RabbitMQ connection closed. Reconnecting...","service":"cancellation-policy-service","timestamp":"2025-11-20 18:09:29"}

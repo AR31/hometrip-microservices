@@ -433,3 +433,157 @@ exports.changePassword = async (req, res) => {
     });
   }
 };
+
+/**
+ * Request password reset
+ * POST /auth/forgot-password
+ */
+exports.forgotPassword = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    if (!email) {
+      return res.status(400).json({
+        success: false,
+        message: "Email requis"
+      });
+    }
+
+    const user = await User.findOne({ email: email.toLowerCase() });
+
+    // Always return success to prevent email enumeration
+    if (!user) {
+      logger.warn(`Password reset requested for non-existent email: ${email}`);
+      return res.json({
+        success: true,
+        message: "Si cet email existe, un lien de réinitialisation a été envoyé"
+      });
+    }
+
+    // Check if account is active
+    if (!user.accountStatus.isActive || user.accountStatus.isBanned) {
+      logger.warn(`Password reset blocked for inactive/banned user: ${email}`);
+      return res.json({
+        success: true,
+        message: "Si cet email existe, un lien de réinitialisation a été envoyé"
+      });
+    }
+
+    // Generate reset token
+    const crypto = require('crypto');
+    const resetToken = crypto.randomBytes(32).toString('hex');
+    const hashedToken = crypto.createHash('sha256').update(resetToken).digest('hex');
+
+    // Save token and expiry (1 hour)
+    user.resetPasswordToken = hashedToken;
+    user.resetPasswordExpires = new Date(Date.now() + 3600000); // 1 hour
+    await user.save();
+
+    // Create reset URL
+    const resetUrl = `${process.env.FRONTEND_URL || 'http://localhost:3000'}/reset-password/${resetToken}`;
+
+    logger.info(`Password reset token generated for: ${user.email}`);
+
+    // Publish event to email-service
+    await eventBus.publish('user.password_reset_requested', {
+      userId: user._id.toString(),
+      email: user.email,
+      resetUrl,
+      resetToken,
+      expiresAt: user.resetPasswordExpires,
+      timestamp: new Date()
+    });
+
+    res.json({
+      success: true,
+      message: "Si cet email existe, un lien de réinitialisation a été envoyé"
+    });
+  } catch (error) {
+    logger.error("Error in forgotPassword:", error);
+    res.status(500).json({
+      success: false,
+      message: "Erreur lors de la demande de réinitialisation"
+    });
+  }
+};
+
+/**
+ * Reset password with token
+ * POST /auth/reset-password
+ */
+exports.resetPassword = async (req, res) => {
+  try {
+    const { token, newPassword } = req.body;
+
+    if (!token || !newPassword) {
+      return res.status(400).json({
+        success: false,
+        message: "Token et nouveau mot de passe requis"
+      });
+    }
+
+    if (newPassword.length < 8) {
+      return res.status(400).json({
+        success: false,
+        message: "Le mot de passe doit contenir au moins 8 caractères"
+      });
+    }
+
+    // Hash the token to compare with DB
+    const crypto = require('crypto');
+    const hashedToken = crypto.createHash('sha256').update(token).digest('hex');
+
+    // Find user with valid token
+    const user = await User.findOne({
+      resetPasswordToken: hashedToken,
+      resetPasswordExpires: { $gt: Date.now() }
+    });
+
+    if (!user) {
+      logger.warn(`Invalid or expired reset token attempted`);
+      return res.status(400).json({
+        success: false,
+        message: "Token invalide ou expiré"
+      });
+    }
+
+    // Check account status
+    if (!user.accountStatus.isActive || user.accountStatus.isBanned) {
+      return res.status(403).json({
+        success: false,
+        message: "Compte inactif ou banni"
+      });
+    }
+
+    // Hash new password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+    // Update password and clear reset token
+    user.password = hashedPassword;
+    user.lastPasswordChange = new Date();
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpires = undefined;
+    await user.save();
+
+    logger.info(`Password reset successful for: ${user.email}`);
+
+    // Publish event
+    await eventBus.publish('user.password_reset_completed', {
+      userId: user._id.toString(),
+      email: user.email,
+      timestamp: new Date()
+    });
+
+    res.json({
+      success: true,
+      message: "Mot de passe réinitialisé avec succès"
+    });
+  } catch (error) {
+    logger.error("Error in resetPassword:", error);
+    res.status(500).json({
+      success: false,
+      message: "Erreur lors de la réinitialisation du mot de passe"
+    });
+  }
+};

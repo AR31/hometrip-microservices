@@ -23,6 +23,15 @@ const changePasswordValidation = [
   body("newPassword").isLength({ min: 8 }).withMessage("Le nouveau mot de passe doit contenir au moins 8 caractères")
 ];
 
+const forgotPasswordValidation = [
+  body("email").isEmail().normalizeEmail().withMessage("Email invalide")
+];
+
+const resetPasswordValidation = [
+  body("token").notEmpty().withMessage("Token requis"),
+  body("newPassword").isLength({ min: 8 }).withMessage("Le mot de passe doit contenir au moins 8 caractères")
+];
+
 /**
  * @swagger
  * components:
@@ -338,5 +347,96 @@ router.post("/logout", authMiddleware, authController.logout);
  *               $ref: '#/components/schemas/Error'
  */
 router.post("/change-password", authMiddleware, changePasswordValidation, validate, authController.changePassword);
+
+/**
+ * @swagger
+ * /auth/forgot-password:
+ *   post:
+ *     summary: Request password reset
+ *     description: Send a password reset email to the user
+ *     tags: [Authentication]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 format: email
+ *                 example: user@example.com
+ *     responses:
+ *       200:
+ *         description: Password reset email sent
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 message:
+ *                   type: string
+ *                   example: Password reset email sent
+ *       400:
+ *         description: Validation error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ */
+router.post("/forgot-password", forgotPasswordValidation, validate, authController.forgotPassword);
+
+/**
+ * @swagger
+ * /auth/reset-password:
+ *   post:
+ *     summary: Reset password with token
+ *     description: Reset user password using the token from email
+ *     tags: [Authentication]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - token
+ *               - newPassword
+ *             properties:
+ *               token:
+ *                 type: string
+ *                 example: abc123def456...
+ *               newPassword:
+ *                 type: string
+ *                 format: password
+ *                 minLength: 8
+ *                 example: NewSecurePass123
+ *     responses:
+ *       200:
+ *         description: Password reset successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 message:
+ *                   type: string
+ *                   example: Password reset successfully
+ *       400:
+ *         description: Invalid or expired token
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ */
+router.post("/reset-password", resetPasswordValidation, validate, authController.resetPassword);
 
 module.exports = router;

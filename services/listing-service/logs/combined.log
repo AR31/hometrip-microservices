@@ -279,3 +279,50 @@
 {"level":"info","message":"Environment: development","service":"listing-service","timestamp":"2025-11-19 23:35:12"}
 {"level":"info","message":"SIGTERM received. Starting graceful shutdown...","service":"listing-service","timestamp":"2025-11-19 23:50:48"}
 {"level":"info","message":"HTTP server closed","service":"listing-service","timestamp":"2025-11-19 23:50:48"}
+{"level":"info","message":"Connected to MongoDB (Listing Service)","service":"listing-service","timestamp":"2025-11-20 14:39:15"}
+{"level":"info","message":"Connected to RabbitMQ","service":"listing-service","timestamp":"2025-11-20 14:39:15"}
+{"level":"info","message":"Server running on 0.0.0.0:3003","service":"listing-service","timestamp":"2025-11-20 14:39:15"}
+{"level":"info","message":"Environment: development","service":"listing-service","timestamp":"2025-11-20 14:39:15"}
+{"level":"warn","message":"MongoDB disconnected","service":"listing-service","timestamp":"2025-11-20 15:14:49"}
+{"level":"info","message":"MongoDB reconnected","service":"listing-service","timestamp":"2025-11-20 15:14:59"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:28:20 +0000] \"GET /listings?guests=1&page=1&limit=20&sortBy=newest&minPrice=0&maxPrice=10000 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 15:28:20"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:28:20 +0000] \"GET /listings?guests=1&page=1&limit=20&sortBy=newest&minPrice=0&maxPrice=10000 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 15:28:20"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:39:48 +0000] \"GET /api/docs HTTP/1.1\" 404 48 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 15:39:48"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:39:48 +0000] \"GET /favicon.ico HTTP/1.1\" 404 48 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 15:39:48"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:51:33 +0000] \"GET /listings?location=test&guests=1&page=1&limit=20&sortBy=newest&minPrice=0&maxPrice=10000 HTTP/1.1\" 200 138 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 15:51:33"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:51:33 +0000] \"GET /listings?location=test&guests=1&page=1&limit=20&sortBy=newest&minPrice=0&maxPrice=10000 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 15:51:33"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:14:52:45 +0000] \"GET /health HTTP/1.1\" 200 105 \"-\" \"curl/7.81.0\"","service":"listing-service","timestamp":"2025-11-20 15:52:45"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:02:10 +0000] \"GET /listings?guests=1&page=1&limit=20&sortBy=newest&minPrice=0&maxPrice=10000 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 16:02:10"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:15:02:10 +0000] \"GET /listings?guests=1&page=1&limit=20&sortBy=newest&minPrice=0&maxPrice=10000 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 16:02:10"}
+{"level":"info","message":"Connected to MongoDB (Listing Service)","service":"listing-service","timestamp":"2025-11-20 17:43:02"}
+{"level":"info","message":"Connected to RabbitMQ","service":"listing-service","timestamp":"2025-11-20 17:43:02"}
+{"level":"info","message":"Server running on 0.0.0.0:3003","service":"listing-service","timestamp":"2025-11-20 17:43:02"}
+{"level":"info","message":"Environment: development","service":"listing-service","timestamp":"2025-11-20 17:43:02"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:47:12 +0000] \"GET /listings?guests=1&page=1&limit=20&sortBy=newest&minPrice=0&maxPrice=10000 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 17:47:12"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:47:12 +0000] \"GET /listings?guests=1&page=1&limit=20&sortBy=newest&minPrice=0&maxPrice=10000 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 17:47:12"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:57:08 +0000] \"GET /listings?guests=1&page=1&limit=20&sortBy=newest&minPrice=0&maxPrice=10000 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 17:57:08"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:16:57:08 +0000] \"GET /listings?guests=1&page=1&limit=20&sortBy=newest&minPrice=0&maxPrice=10000 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 17:57:08"}
+{"level":"info","message":"SIGTERM received. Starting graceful shutdown...","service":"listing-service","timestamp":"2025-11-20 18:08:56"}
+{"level":"info","message":"HTTP server closed","service":"listing-service","timestamp":"2025-11-20 18:08:56"}
+{"level":"warn","message":"MongoDB disconnected","service":"listing-service","timestamp":"2025-11-20 18:08:56"}
+{"level":"info","message":"MongoDB connection closed","service":"listing-service","timestamp":"2025-11-20 18:08:56"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"listing-service","timestamp":"2025-11-20 18:08:56"}
+{"level":"info","message":"Connected to MongoDB (Listing Service)","service":"listing-service","timestamp":"2025-11-20 18:11:48"}
+{"level":"info","message":"Connected to RabbitMQ","service":"listing-service","timestamp":"2025-11-20 18:11:48"}
+{"level":"info","message":"Server running on 0.0.0.0:3003","service":"listing-service","timestamp":"2025-11-20 18:11:48"}
+{"level":"info","message":"Environment: development","service":"listing-service","timestamp":"2025-11-20 18:11:48"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:22:28 +0000] \"GET /listings?location=amiens&guests=1&page=1&limit=20&sortBy=newest&minPrice=0&maxPrice=10000 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 18:22:28"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:22:33 +0000] \"GET /listings?location=amiens&guests=1&page=1&limit=20&sortBy=newest&minPrice=0&maxPrice=10000 HTTP/1.1\" 304 - \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 18:22:33"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:23:03 +0000] \"GET /listings?location=paris&guests=1&page=1&limit=20&sortBy=newest&minPrice=0&maxPrice=10000 HTTP/1.1\" 200 138 \"http://localhost:3000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"listing-service","timestamp":"2025-11-20 18:23:03"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:25:25 +0000] \"GET /health HTTP/1.1\" 200 105 \"-\" \"curl/7.81.0\"","service":"listing-service","timestamp":"2025-11-20 18:25:25"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:26:12 +0000] \"GET /health HTTP/1.1\" 200 105 \"-\" \"curl/7.81.0\"","service":"listing-service","timestamp":"2025-11-20 18:26:12"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:28:58 +0000] \"GET /health HTTP/1.1\" 200 105 \"-\" \"curl/7.81.0\"","service":"listing-service","timestamp":"2025-11-20 18:28:58"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:29:21 +0000] \"GET /health HTTP/1.1\" 200 105 \"-\" \"curl/7.81.0\"","service":"listing-service","timestamp":"2025-11-20 18:29:21"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:29:49 +0000] \"GET /health HTTP/1.1\" 200 105 \"-\" \"curl/7.81.0\"","service":"listing-service","timestamp":"2025-11-20 18:29:49"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:30:13 +0000] \"GET /health HTTP/1.1\" 200 105 \"-\" \"curl/7.81.0\"","service":"listing-service","timestamp":"2025-11-20 18:30:13"}
+{"level":"info","message":"127.0.0.1 - - [20/Nov/2025:17:30:45 +0000] \"GET /health HTTP/1.1\" 200 105 \"-\" \"curl/7.81.0\"","service":"listing-service","timestamp":"2025-11-20 18:30:45"}
+{"level":"info","message":"SIGTERM received. Starting graceful shutdown...","service":"listing-service","timestamp":"2025-11-20 18:51:56"}
+{"level":"info","message":"HTTP server closed","service":"listing-service","timestamp":"2025-11-20 18:51:56"}
+{"level":"warn","message":"MongoDB disconnected","service":"listing-service","timestamp":"2025-11-20 18:51:56"}
+{"level":"info","message":"MongoDB connection closed","service":"listing-service","timestamp":"2025-11-20 18:51:56"}
+{"level":"warn","message":"RabbitMQ connection closed","service":"listing-service","timestamp":"2025-11-20 18:51:56"}

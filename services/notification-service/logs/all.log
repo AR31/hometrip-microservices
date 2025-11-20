@@ -404,3 +404,143 @@
 [2025-11-19T22:50:48.090Z] [INFO] Server closed
 [2025-11-19T22:50:48.102Z] [INFO] Disconnected from RabbitMQ
 [2025-11-19T22:50:48.102Z] [INFO] Notification Service shut down successfully
+[2025-11-20T13:39:28.008Z] [INFO] Initializing Notification Service...
+[2025-11-20T13:39:28.009Z] [INFO] Connecting to MongoDB...
+[2025-11-20T13:39:28.264Z] [INFO] MongoDB connected successfully
+[2025-11-20T13:39:28.264Z] [INFO] Initializing email service...
+[2025-11-20T13:39:28.267Z] [INFO] Initializing Twilio SMS service...
+[2025-11-20T13:39:28.268Z] [ERROR] Service initialization error: {}
+[2025-11-20T13:39:28.272Z] [INFO] Notification Service running on http://0.0.0.0:3007
+[2025-11-20T13:39:28.272Z] [INFO] Environment: development
+[2025-11-20T13:39:28.623Z] [ERROR] Email service verification error: {"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-42cb7f2e5a3sm5651533f8f.6 - gsmtp","responseCode":535,"command":"AUTH PLAIN"}
+[2025-11-20T14:14:42.136Z] [WARN] MongoDB disconnected
+[2025-11-20T14:27:06.532Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:27:06.538Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:27:06.539Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:27:06.545Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:27:06.546Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:27:06.551Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:27:06.552Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:27:06.558Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:28:07.916Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:28:07.918Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:28:07.921Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:28:07.923Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:28:07.927Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:28:07.928Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:28:07.933Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:28:07.934Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:28:33.752Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:28:33.755Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:28:33.762Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:28:33.763Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:32:37.489Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:32:37.495Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:32:37.501Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:32:37.502Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:32:37.508Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:32:37.509Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:32:37.516Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:32:37.516Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:51:27.059Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:51:27.061Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:51:27.067Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:51:27.069Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:51:27.075Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:51:27.076Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:51:27.081Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T14:51:27.082Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T15:02:07.715Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T15:02:07.720Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T15:02:07.721Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T15:02:07.725Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:43:14.237Z] [INFO] Initializing Notification Service...
+[2025-11-20T16:43:14.238Z] [INFO] Connecting to MongoDB...
+[2025-11-20T16:43:14.505Z] [INFO] MongoDB connected successfully
+[2025-11-20T16:43:14.505Z] [INFO] Initializing email service...
+[2025-11-20T16:43:14.507Z] [INFO] Initializing Twilio SMS service...
+[2025-11-20T16:43:14.507Z] [ERROR] Service initialization error: {}
+[2025-11-20T16:43:14.509Z] [INFO] Notification Service running on http://0.0.0.0:3007
+[2025-11-20T16:43:14.510Z] [INFO] Environment: development
+[2025-11-20T16:43:14.624Z] [ERROR] Email service verification error: {"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-42cb7fa3592sm6053765f8f.21 - gsmtp","responseCode":535,"command":"AUTH PLAIN"}
+[2025-11-20T16:46:01.372Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:01.373Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:01.378Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:01.382Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:01.384Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:01.387Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:01.389Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:01.393Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:07.002Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:07.005Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:07.018Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:07.020Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:09.526Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:09.527Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:09.531Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:09.532Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:09.535Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:09.536Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:09.539Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:09.540Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:16.370Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:16.371Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:16.376Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:16.377Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:16.382Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:16.383Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:16.390Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:16.391Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:31.291Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:31.292Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:31.296Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:46:31.297Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:36.761Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:36.767Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:36.771Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:36.772Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:36.777Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:36.778Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:36.782Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:36.783Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:54.756Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:54.757Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:54.763Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:54.764Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:54.768Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:54.769Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:54.774Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:58:54.776Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:59:24.763Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:59:24.767Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:59:54.766Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T16:59:54.771Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T17:00:24.766Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T17:00:24.772Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T17:00:54.766Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T17:00:54.772Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T17:04:53.871Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T17:04:53.872Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T17:04:53.876Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T17:04:53.877Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T17:04:53.881Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T17:04:53.882Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T17:04:53.886Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T17:04:53.887Z] [ERROR] JWT verification failed: "invalid signature"
+[2025-11-20T17:09:05.451Z] [INFO] Shutting down gracefully...
+[2025-11-20T17:09:05.457Z] [INFO] Server closed
+[2025-11-20T17:09:05.457Z] [INFO] Disconnected from RabbitMQ
+[2025-11-20T17:09:05.457Z] [INFO] Notification Service shut down successfully
+[2025-11-20T17:12:00.820Z] [INFO] Initializing Notification Service...
+[2025-11-20T17:12:00.820Z] [INFO] Connecting to MongoDB...
+[2025-11-20T17:12:01.124Z] [INFO] MongoDB connected successfully
+[2025-11-20T17:12:01.125Z] [INFO] Initializing email service...
+[2025-11-20T17:12:01.128Z] [INFO] Initializing Twilio SMS service...
+[2025-11-20T17:12:01.128Z] [ERROR] Service initialization error: {}
+[2025-11-20T17:12:01.131Z] [INFO] Notification Service running on http://0.0.0.0:3007
+[2025-11-20T17:12:01.132Z] [INFO] Environment: development
+[2025-11-20T17:12:01.260Z] [ERROR] Email service verification error: {"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-42cb7f34ffesm7270874f8f.10 - gsmtp","responseCode":535,"command":"AUTH PLAIN"}
+[2025-11-20T17:52:04.659Z] [INFO] Shutting down gracefully...
+[2025-11-20T17:52:04.666Z] [INFO] Server closed
+[2025-11-20T17:52:04.666Z] [INFO] Disconnected from RabbitMQ
+[2025-11-20T17:52:04.666Z] [INFO] Notification Service shut down successfully

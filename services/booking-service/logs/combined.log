@@ -8122,3 +8122,79 @@ CastError: Cast to ObjectId failed for value "my" (type string) at path "_id" fo
 2025-11-19 23:47:55 [INFO] 127.0.0.1 - - [19/Nov/2025:22:47:55 +0000] "GET /api/bookings/user HTTP/1.1" 200 44 "-" "curl/7.81.0"
 
 2025-11-19 23:50:48 [INFO] Graceful shutdown initiated
+2025-11-20 14:39:18 [INFO] MongoDB connected successfully
+2025-11-20 14:39:18 [INFO] Connected to: mongodb+srv://arwakhlifi31:bjR7XvPaL3savRmt@cluster0.hxvjyu7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+2025-11-20 14:39:18 [INFO] Connected to RabbitMQ
+2025-11-20 14:39:18 [INFO] Subscribed to event: payment.succeeded
+2025-11-20 14:39:18 [INFO] Subscribed to event: payment.failed
+2025-11-20 14:39:18 [INFO] Booking Service started on port 3004
+2025-11-20 14:39:18 [INFO] Environment: development
+2025-11-20 14:39:18 [INFO] Service Version: 1.0.0
+2025-11-20 15:31:22 [INFO] Retrieved 0 reservations for user: 691e45756804b7d60b4536b2
+2025-11-20 15:31:22 [INFO] 127.0.0.1 - - [20/Nov/2025:14:31:22 +0000] "GET /api/bookings/user?role=host HTTP/1.1" 200 44 "-" "curl/7.81.0"
+
+2025-11-20 15:32:30 [INFO] 127.0.0.1 - - [20/Nov/2025:14:32:30 +0000] "GET /api/bookings/user?role=host HTTP/1.1" 401 47 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+
+2025-11-20 15:52:45 [INFO] 127.0.0.1 - - [20/Nov/2025:14:52:45 +0000] "GET /health HTTP/1.1" 200 105 "-" "curl/7.81.0"
+
+2025-11-20 15:58:50 [INFO] 127.0.0.1 - - [20/Nov/2025:14:58:50 +0000] "GET /api/bookings/user?role=host HTTP/1.1" 401 47 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+
+2025-11-20 15:58:50 [INFO] 127.0.0.1 - - [20/Nov/2025:14:58:50 +0000] "GET /api/bookings/user?role=host HTTP/1.1" 401 47 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+
+2025-11-20 15:58:55 [INFO] 127.0.0.1 - - [20/Nov/2025:14:58:55 +0000] "GET /api/bookings/user?role=host HTTP/1.1" 401 47 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+
+2025-11-20 15:58:55 [INFO] 127.0.0.1 - - [20/Nov/2025:14:58:55 +0000] "GET /api/bookings/user?role=host HTTP/1.1" 401 47 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+
+2025-11-20 16:48:32 [ERROR] Authentication error:
+2025-11-20 16:48:32 [INFO] 127.0.0.1 - - [20/Nov/2025:15:48:32 +0000] "GET /api/bookings/user HTTP/1.1" 401 43 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+
+2025-11-20 16:48:32 [ERROR] Authentication error:
+2025-11-20 16:48:32 [INFO] 127.0.0.1 - - [20/Nov/2025:15:48:32 +0000] "GET /api/bookings/user HTTP/1.1" 401 43 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+
+2025-11-20 17:43:05 [INFO] MongoDB connected successfully
+2025-11-20 17:43:05 [INFO] Connected to: mongodb+srv://arwakhlifi31:bjR7XvPaL3savRmt@cluster0.hxvjyu7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+2025-11-20 17:43:05 [INFO] Connected to RabbitMQ
+2025-11-20 17:43:05 [INFO] Subscribed to event: payment.succeeded
+2025-11-20 17:43:05 [INFO] Subscribed to event: payment.failed
+2025-11-20 17:43:05 [INFO] Booking Service started on port 3004
+2025-11-20 17:43:05 [INFO] Environment: development
+2025-11-20 17:43:05 [INFO] Service Version: 1.0.0
+2025-11-20 17:46:07 [INFO] Retrieved 0 reservations for user: 691f45c9368a6b1da7b26c22
+2025-11-20 17:46:07 [INFO] 127.0.0.1 - - [20/Nov/2025:16:46:07 +0000] "GET /api/bookings/user?role=host HTTP/1.1" 200 44 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+
+2025-11-20 17:46:07 [INFO] Retrieved 0 reservations for user: 691f45c9368a6b1da7b26c22
+2025-11-20 17:46:07 [INFO] 127.0.0.1 - - [20/Nov/2025:16:46:07 +0000] "GET /api/bookings/user?role=host HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+
+2025-11-20 17:46:28 [INFO] 127.0.0.1 - - [20/Nov/2025:16:46:28 +0000] "GET /api/bookings/user?role=host HTTP/1.1" 401 47 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+
+2025-11-20 17:46:28 [INFO] 127.0.0.1 - - [20/Nov/2025:16:46:28 +0000] "GET /api/bookings/user?role=host HTTP/1.1" 401 47 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+
+2025-11-20 18:08:58 [INFO] Graceful shutdown initiated
+2025-11-20 18:11:51 [INFO] MongoDB connected successfully
+2025-11-20 18:11:51 [INFO] Connected to: mongodb+srv://arwakhlifi31:bjR7XvPaL3savRmt@cluster0.hxvjyu7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+2025-11-20 18:11:51 [INFO] Connected to RabbitMQ
+2025-11-20 18:11:51 [INFO] Subscribed to event: payment.succeeded
+2025-11-20 18:11:51 [INFO] Subscribed to event: payment.failed
+2025-11-20 18:11:51 [INFO] Booking Service started on port 3004
+2025-11-20 18:11:51 [INFO] Environment: development
+2025-11-20 18:11:51 [INFO] Service Version: 1.0.0
+2025-11-20 18:23:12 [INFO] 127.0.0.1 - - [20/Nov/2025:17:23:12 +0000] "GET /api/bookings/user?role=host HTTP/1.1" 401 47 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+
+2025-11-20 18:23:12 [INFO] 127.0.0.1 - - [20/Nov/2025:17:23:12 +0000] "GET /api/bookings/user?role=host HTTP/1.1" 401 47 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+
+2025-11-20 18:25:25 [INFO] 127.0.0.1 - - [20/Nov/2025:17:25:25 +0000] "GET /health HTTP/1.1" 200 105 "-" "curl/7.81.0"
+
+2025-11-20 18:26:12 [INFO] 127.0.0.1 - - [20/Nov/2025:17:26:12 +0000] "GET /health HTTP/1.1" 200 105 "-" "curl/7.81.0"
+
+2025-11-20 18:28:58 [INFO] 127.0.0.1 - - [20/Nov/2025:17:28:58 +0000] "GET /health HTTP/1.1" 200 105 "-" "curl/7.81.0"
+
+2025-11-20 18:29:21 [INFO] 127.0.0.1 - - [20/Nov/2025:17:29:21 +0000] "GET /health HTTP/1.1" 200 105 "-" "curl/7.81.0"
+
+2025-11-20 18:29:49 [INFO] 127.0.0.1 - - [20/Nov/2025:17:29:49 +0000] "GET /health HTTP/1.1" 200 105 "-" "curl/7.81.0"
+
+2025-11-20 18:30:13 [INFO] 127.0.0.1 - - [20/Nov/2025:17:30:13 +0000] "GET /health HTTP/1.1" 200 105 "-" "curl/7.81.0"
+
+2025-11-20 18:30:45 [INFO] 127.0.0.1 - - [20/Nov/2025:17:30:45 +0000] "GET /health HTTP/1.1" 200 105 "-" "curl/7.81.0"
+
+2025-11-20 18:51:58 [INFO] Graceful shutdown initiated
+2025-11-20 18:51:58 [WARN] RabbitMQ connection closed

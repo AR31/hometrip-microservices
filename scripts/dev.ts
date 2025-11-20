@@ -33,6 +33,17 @@ const SERVICES = [
   { name: 'analytics-service', port: 3010, dir: 'services/analytics-service' },
   { name: 'websocket-gateway', port: 3011, dir: 'services/websocket-gateway' },
   { name: 'logger-service', port: 3012, dir: 'services/logger-service' },
+  { name: 'experience-service', port: 4011, dir: 'services/experience-service' },
+  { name: 'wishlist-service', port: 4012, dir: 'services/wishlist-service' },
+  { name: 'gift-card-service', port: 4013, dir: 'services/gift-card-service' },
+  { name: 'dispute-service', port: 4014, dir: 'services/dispute-service' },
+  { name: 'identity-verification-service', port: 4015, dir: 'services/identity-verification-service' },
+  { name: 'cancellation-policy-service', port: 4016, dir: 'services/cancellation-policy-service' },
+  { name: 'coupon-service', port: 4017, dir: 'services/coupon-service' },
+  { name: 'two-factor-service', port: 4018, dir: 'services/two-factor-service' },
+  { name: 'payout-service', port: 4019, dir: 'services/payout-service' },
+  { name: 'email-service', port: 4020, dir: 'services/email-service' },
+  { name: 'payment-history-service', port: 4021, dir: 'services/payment-history-service' },
 ]
 
 const PIDS_DIR = path.join(process.env.HOME || '', 'hometrip-microservices', 'pids')

@@ -1,0 +1,146 @@
+# Dependencies
+node_modules/
+*/node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+
+# Logs
+logs/
+*/logs/
+**/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory
+coverage/
+*.lcov
+.nyc_output
+
+# Testing
+.jest/
+
+# Build outputs
+dist/
+build/
+*.tgz
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# IDE - IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Docker
+docker-compose.override.yml
+
+# RabbitMQ data
+rabbitmq_data/
+
+# Redis data
+redis_data/
+
+# MongoDB data
+mongodb_data/
+
+# PM2
+.pm2/
+pm2.log
+
+# Documentation files (markdown created during development)
+*GUIDE*.md
+*QUICK*.md
+*RAPPORT*.md
+*IMPLEMENTATION*.md
+*COMPLETE*.md
+*WEBHOOK*.md
+*MIGRATION*.md
+*INSTALLATION*.md
+*SEED*.md
+*TEST*.md
+integration-test-report-*.md
+AVATAR_UPLOAD_SECURITY.md
+DEV_SCRIPTS_README.md
+DOCUMENTATION_INDEX.md
+FILES_CREATED_TODAY.md
+FRONTEND_MICROSERVICES_MIGRATION.md
+FRONTEND_QUICK_START.md
+FRONTEND_WEBHOOK_MIGRATION.md
+GUIDE_MIGRATION_RAPIDE.md
+IMPLEMENTATION_SUCCESS.txt
+LOGGER_MIGRATION_GUIDE.md
+LOGGER_QUICK_START.md
+LOGGER_SERVICE_COMPLETE.md
+MIGRATION_MICROSERVICES.md
+MOBILE_QUICK_START.md
+MOBILE_VERSION_TODO.md
+PHASE_2_COMPLETED.md
+PHASE_3_COMPLETED.md
+PROCESS_MANAGER_COMPLETE.md
+PROCESS_MANAGER_GUIDE.md
+PROCESS_MANAGER_QUICK_START.md
+RAPPORT_FINAL_COMPLET.md
+README_SERVICES.md
+README_STRIPE_QUICK_START.md
+SERVICES_IMPLEMENTATION_SUMMARY.md
+SOLUTION_ERREUR_401.md
+STATUS_AND_NEXT_STEPS.md
+STRIPE_COMPLETION_SUMMARY.txt
+STRIPE_IMPLEMENTATION_COMPLETE.md
+STRIPE_WEBHOOK_IMPLEMENTATION.md
+STRIPE_WEBHOOK_IMPLEMENTATION_COMPLETE.md
+TESTING_GUIDE.md
+TEST_ACCOUNTS.md
+WEBHOOK_STRIPE_SETUP.md
+UTILISER_MONGODB_ATLAS.md
+GUIDE_SWAGGER.md
+LANCER_SWAGGER.md
+
+# Test data scripts
+seed-data.js
+check-data.js
+list-test-accounts.js
+*/seed-data.js
+*/check-data.js
+*/list-test-accounts.js
+
+# Script logs
+*.sh.log
+/tmp/*.log

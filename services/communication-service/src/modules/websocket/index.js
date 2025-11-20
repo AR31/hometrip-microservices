@@ -1,0 +1,533 @@
+const http = require('http');
+const { Server } = require('socket.io');
+const redis = require('redis');
+const { createAdapter } = require('@socket.io/redis-adapter');
+const express = require('express');
+const cors = require('cors');
+
+const config = require('./config');
+const logger = require('./utils/logger');
+const eventBus = require('./utils/eventBus');
+const socketAuth = require('./middleware/socketAuth');
+
+// Create Express app
+
+// Swagger Documentation
+const { swaggerSpec, swaggerUi, swaggerUiOptions } = require('./config/swagger');
+const app = express();
+
+// Middleware
+app.use(cors(config.socketio.cors));
+app.use(express.json());
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'healthy',
+    service: config.app.name,
+    version: config.app.version,
+    redis: redisClient && redisClient.isReady ? 'connected' : 'disabled',
+    eventBus: eventBus.getStatus()
+  });
+});
+
+// Metrics endpoint
+app.get('/metrics', (req, res) => {
+  if (!io) {
+    return res.status(503).json({ error: 'Socket.io not initialized' });
+  }
+
+  const sockets = io.sockets.sockets;
+  const rooms = io.sockets.adapter.rooms;
+
+  res.json({
+    connectedSockets: sockets.size,
+    rooms: Array.from(rooms.keys()),
+    totalRooms: rooms.size
+  });
+});
+
+// Create HTTP server
+const server = http.createServer(app);
+
+// Initialize Socket.io with Redis adapter
+const io = new Server(server, {
+  cors: config.socketio.cors,
+  transports: config.socketio.transports,
+  pingInterval: config.socketio.pingInterval,
+  pingTimeout: config.socketio.pingTimeout,
+  maxHttpBufferSize: config.socketio.maxHttpBufferSize,
+  allowEIO3: config.socketio.allowEIO3
+});
+
+// Redis client for Socket.io adapter (optional - for horizontal scaling)
+let redisClient = null;
+let pubClient = null;
+
+/**
+ * Setup Socket.io with optional Redis adapter
+ */
+async function setupSocketIO() {
+  try {
+    // Try to connect to Redis for horizontal scaling (optional)
+    const useRedis = process.env.USE_REDIS !== 'false';
+
+    if (useRedis) {
+      try {
+        redisClient = redis.createClient({
+          host: config.redis.host,
+          port: config.redis.port,
+          password: config.redis.password,
+          db: config.redis.db
+        });
+
+        pubClient = redisClient.duplicate();
+
+        // Connect Redis clients
+        await redisClient.connect();
+        await pubClient.connect();
+
+        logger.info('Connected to Redis for horizontal scaling', {
+          host: config.redis.host,
+          port: config.redis.port
+        });
+
+        // Use Redis adapter for horizontal scaling
+        io.adapter(createAdapter(pubClient, redisClient));
+      } catch (redisError) {
+        logger.warn('Redis connection failed, running without horizontal scaling support', {
+          error: redisError.message
+        });
+        redisClient = null;
+        pubClient = null;
+      }
+    } else {
+      logger.info('Redis disabled, running in single-instance mode');
+    }
+
+    // Apply authentication middleware
+    io.use(socketAuth);
+
+    // Handle new connections
+    io.on('connection', handleConnection);
+    io.on('error', (error) => {
+      logger.error('Socket.io error', { error: error.message });
+    });
+
+    logger.info('Socket.io server initialized');
+  } catch (error) {
+    logger.error('Failed to setup Socket.io', { error: error.message });
+    process.exit(1);
+  }
+}
+
+/**
+ * Handle new socket connection
+ */
+function handleConnection(socket) {
+  const { userId, userEmail } = socket;
+
+  logger.info('Socket connected', {
+    socketId: socket.id,
+    userId,
+    userEmail,
+    totalConnected: io.engine.clientsCount
+  });
+
+  // Join user room automatically
+  if (userId) {
+    const userRoom = `${config.rooms.userPrefix}${userId}`;
+    socket.join(userRoom);
+
+    logger.info('Socket joined user room', {
+      socketId: socket.id,
+      userId,
+      room: userRoom
+    });
+
+    // Notify user of successful connection
+    socket.emit('connected', {
+      socketId: socket.id,
+      userId,
+      message: 'Connected to WebSocket Gateway'
+    });
+  }
+
+  // Handle room joining
+  socket.on('join_room', (data, callback) => {
+    handleJoinRoom(socket, data, callback);
+  });
+
+  // Handle room leaving
+  socket.on('leave_room', (data, callback) => {
+    handleLeaveRoom(socket, data, callback);
+  });
+
+  // Handle typing indicator
+  socket.on('typing', (data, callback) => {
+    handleTyping(socket, data, callback);
+  });
+
+  // Handle stop typing
+  socket.on('stop_typing', (data, callback) => {
+    handleStopTyping(socket, data, callback);
+  });
+
+  // Handle disconnect
+  socket.on('disconnect', (reason) => {
+    handleDisconnect(socket, reason);
+  });
+
+  // Handle errors
+  socket.on('error', (error) => {
+    logger.error('Socket error', {
+      socketId: socket.id,
+      userId,
+      error: error.message
+    });
+  });
+}
+
+/**
+ * Handle join_room event
+ */
+function handleJoinRoom(socket, data, callback) {
+  try {
+    const { roomType, roomId } = data;
+
+    if (!roomType || !roomId) {
+      return callback({ error: 'Missing roomType or roomId' });
+    }
+
+    // Validate room type
+    const validRoomTypes = ['conversation', 'notification'];
+    if (!validRoomTypes.includes(roomType)) {
+      return callback({ error: 'Invalid roomType' });
+    }
+
+    // Create room name
+    const room = `${config.rooms[roomType + 'Prefix']}${roomId}`;
+
+    // Join room
+    socket.join(room);
+
+    logger.info('Socket joined room', {
+      socketId: socket.id,
+      userId: socket.userId,
+      room,
+      roomType,
+      roomId
+    });
+
+    // Emit success
+    callback({
+      success: true,
+      message: `Joined room: ${room}`
+    });
+
+    // Notify others in room
+    io.to(room).emit('user_joined', {
+      socketId: socket.id,
+      userId: socket.userId,
+      room,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    logger.error('Error joining room', {
+      socketId: socket.id,
+      error: error.message
+    });
+    callback({ error: error.message });
+  }
+}
+
+/**
+ * Handle leave_room event
+ */
+function handleLeaveRoom(socket, data, callback) {
+  try {
+    const { roomType, roomId } = data;
+
+    if (!roomType || !roomId) {
+      return callback({ error: 'Missing roomType or roomId' });
+    }
+
+    // Create room name
+    const room = `${config.rooms[roomType + 'Prefix']}${roomId}`;
+
+    // Leave room
+    socket.leave(room);
+
+    logger.info('Socket left room', {
+      socketId: socket.id,
+      userId: socket.userId,
+      room,
+      roomType,
+      roomId
+    });
+
+    // Emit success
+    callback({
+      success: true,
+      message: `Left room: ${room}`
+    });
+
+    // Notify others in room
+    io.to(room).emit('user_left', {
+      socketId: socket.id,
+      userId: socket.userId,
+      room,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    logger.error('Error leaving room', {
+      socketId: socket.id,
+      error: error.message
+    });
+    callback({ error: error.message });
+  }
+}
+
+/**
+ * Handle typing indicator
+ */
+function handleTyping(socket, data, callback) {
+  try {
+    const { roomType, roomId } = data;
+
+    if (!roomType || !roomId) {
+      return callback({ error: 'Missing roomType or roomId' });
+    }
+
+    const room = `${config.rooms[roomType + 'Prefix']}${roomId}`;
+
+    // Broadcast typing indicator
+    socket.to(room).emit('user_typing', {
+      socketId: socket.id,
+      userId: socket.userId,
+      room,
+      timestamp: new Date().toISOString()
+    });
+
+    callback({ success: true });
+  } catch (error) {
+    logger.error('Error handling typing', {
+      socketId: socket.id,
+      error: error.message
+    });
+    callback({ error: error.message });
+  }
+}
+
+/**
+ * Handle stop typing
+ */
+function handleStopTyping(socket, data, callback) {
+  try {
+    const { roomType, roomId } = data;
+
+    if (!roomType || !roomId) {
+      return callback({ error: 'Missing roomType or roomId' });
+    }
+
+    const room = `${config.rooms[roomType + 'Prefix']}${roomId}`;
+
+    // Broadcast stop typing
+    socket.to(room).emit('user_stop_typing', {
+      socketId: socket.id,
+      userId: socket.userId,
+      room,
+      timestamp: new Date().toISOString()
+    });
+
+    callback({ success: true });
+  } catch (error) {
+    logger.error('Error handling stop typing', {
+      socketId: socket.id,
+      error: error.message
+    });
+    callback({ error: error.message });
+  }
+}
+
+/**
+ * Handle disconnect
+ */
+function handleDisconnect(socket, reason) {
+  logger.info('Socket disconnected', {
+    socketId: socket.id,
+    userId: socket.userId,
+    reason,
+    totalConnected: io.engine.clientsCount
+  });
+}
+
+/**
+ * Setup event subscriptions from RabbitMQ
+ */
+async function setupEventSubscriptions() {
+  try {
+    // Subscribe to message.sent event
+    await eventBus.subscribe('message.sent', config.rabbitmq.queues.messageSent, async (event) => {
+      logger.info('Event received: message.sent', { event });
+
+      const { conversationId, senderId, recipientId, message, timestamp } = event;
+
+      if (conversationId) {
+        const conversationRoom = `${config.rooms.conversationPrefix}${conversationId}`;
+
+        // Emit to conversation room
+        io.to(conversationRoom).emit('new_message', {
+          conversationId,
+          senderId,
+          recipientId,
+          message,
+          timestamp: timestamp || new Date().toISOString()
+        });
+
+        logger.debug('Broadcasted new_message event', {
+          conversationRoom,
+          conversationId
+        });
+      }
+    });
+
+    // Subscribe to booking.confirmed event
+    await eventBus.subscribe('booking.confirmed', config.rabbitmq.queues.bookingConfirmed, async (event) => {
+      logger.info('Event received: booking.confirmed', { event });
+
+      const { bookingId, userId, status, timestamp } = event;
+
+      if (userId) {
+        const userRoom = `${config.rooms.userPrefix}${userId}`;
+
+        // Emit to user room
+        io.to(userRoom).emit('booking_update', {
+          bookingId,
+          status,
+          type: 'booking_confirmed',
+          timestamp: timestamp || new Date().toISOString()
+        });
+
+        logger.debug('Broadcasted booking_update event', {
+          userRoom,
+          userId,
+          bookingId
+        });
+      }
+    });
+
+    // Subscribe to notification.created event
+    await eventBus.subscribe('notification.created', config.rabbitmq.queues.notificationCreated, async (event) => {
+      logger.info('Event received: notification.created', { event });
+
+      const { notificationId, userId, type, title, message, data, timestamp } = event;
+
+      if (userId) {
+        const userRoom = `${config.rooms.userPrefix}${userId}`;
+
+        // Emit to user room
+        io.to(userRoom).emit('new_notification', {
+          notificationId,
+          type,
+          title,
+          message,
+          data,
+          timestamp: timestamp || new Date().toISOString()
+        });
+
+        logger.debug('Broadcasted new_notification event', {
+          userRoom,
+          userId,
+          notificationId
+        });
+      }
+    });
+
+    logger.info('Event subscriptions setup complete');
+  } catch (error) {
+    logger.error('Failed to setup event subscriptions', { error: error.message });
+    process.exit(1);
+  }
+}
+
+/**
+ * Start server
+ */
+async function start() {
+  try {
+    // Setup Socket.io
+    await setupSocketIO();
+
+    // Connect to event bus
+    await eventBus.connect();
+
+    // Setup event subscriptions
+    await setupEventSubscriptions();
+
+    // Start server
+    server.listen(config.app.port, config.app.host, () => {
+      logger.info(`WebSocket Gateway started`, {
+        host: config.app.host,
+        port: config.app.port,
+        env: config.app.env
+      });
+    });
+  } catch (error) {
+    logger.error('Failed to start server', { error: error.message });
+    process.exit(1);
+  }
+}
+
+/**
+ * Graceful shutdown
+ */
+process.on('SIGTERM', async () => {
+  logger.info('SIGTERM received, shutting down gracefully');
+
+  try {
+    io.close();
+    await eventBus.close();
+    if (redisClient) await redisClient.disconnect();
+    if (pubClient) await pubClient.disconnect();
+    server.close(() => {
+      logger.info('Server closed');
+      process.exit(0);
+    });
+  } catch (error) {
+    logger.error('Error during shutdown', { error: error.message });
+    process.exit(1);
+  }
+});
+
+process.on('SIGINT', async () => {
+  logger.info('SIGINT received, shutting down gracefully');
+
+  try {
+    io.close();
+    await eventBus.close();
+    if (redisClient) await redisClient.disconnect();
+    if (pubClient) await pubClient.disconnect();
+    server.close(() => {
+      logger.info('Server closed');
+      process.exit(0);
+    });
+  } catch (error) {
+    logger.error('Error during shutdown', { error: error.message });
+    process.exit(1);
+  }
+});
+
+// Handle unhandled exceptions
+process.on('uncaughtException', (error) => {
+  logger.error('Uncaught exception', { error: error.message, stack: error.stack });
+  process.exit(1);
+});
+
+// Handle unhandled promise rejections
+process.on('unhandledRejection', (reason, promise) => {
+  logger.error('Unhandled rejection', { reason, promise });
+});
+
+// Start the server
+start();

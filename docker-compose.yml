@@ -322,6 +322,99 @@ services:
       - hometrip-network
     restart: unless-stopped
 
+  # Experience Service
+  experience-service:
+    build:
+      context: ./services/experience-service
+      dockerfile: Dockerfile
+    container_name: hometrip-experience-service
+    ports:
+      - "4011:4011"
+    environment:
+      - NODE_ENV=production
+      - PORT=4011
+      - MONGO_URI=mongodb://mongodb:27017/experience_db
+      - JWT_SECRET=${JWT_SECRET}
+      - RABBITMQ_URL=amqp://rabbitmq:5672
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - mongodb
+      - redis
+      - rabbitmq
+    networks:
+      - hometrip-network
+    restart: unless-stopped
+
+  # Wishlist Service
+  wishlist-service:
+    build:
+      context: ./services/wishlist-service
+      dockerfile: Dockerfile
+    container_name: hometrip-wishlist-service
+    ports:
+      - "4012:4012"
+    environment:
+      - NODE_ENV=production
+      - PORT=4012
+      - MONGO_URI=mongodb://mongodb:27017/wishlist_db
+      - JWT_SECRET=${JWT_SECRET}
+      - RABBITMQ_URL=amqp://rabbitmq:5672
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - mongodb
+      - redis
+      - rabbitmq
+    networks:
+      - hometrip-network
+    restart: unless-stopped
+
+  # GiftCard Service
+  gift-card-service:
+    build:
+      context: ./services/gift-card-service
+      dockerfile: Dockerfile
+    container_name: hometrip-gift-card-service
+    ports:
+      - "4013:4013"
+    environment:
+      - NODE_ENV=production
+      - PORT=4013
+      - MONGO_URI=mongodb://mongodb:27017/giftcard_db
+      - JWT_SECRET=${JWT_SECRET}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
+      - RABBITMQ_URL=amqp://rabbitmq:5672
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - mongodb
+      - redis
+      - rabbitmq
+    networks:
+      - hometrip-network
+    restart: unless-stopped
+
+  # Dispute Service
+  dispute-service:
+    build:
+      context: ./services/dispute-service
+      dockerfile: Dockerfile
+    container_name: hometrip-dispute-service
+    ports:
+      - "4014:4014"
+    environment:
+      - NODE_ENV=production
+      - PORT=4014
+      - MONGO_URI=mongodb://mongodb:27017/dispute_db
+      - JWT_SECRET=${JWT_SECRET}
+      - RABBITMQ_URL=amqp://rabbitmq:5672
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - mongodb
+      - redis
+      - rabbitmq
+    networks:
+      - hometrip-network
+    restart: unless-stopped
+
   # ============================================
   # DATABASES
   # ============================================

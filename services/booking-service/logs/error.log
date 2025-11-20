@@ -2888,3 +2888,5 @@ CastError: Cast to ObjectId failed for value "my" (type string) at path "_id" fo
     at model.Query.exec (/home/arwa/hopTrip/hometrip-microservices/services/booking-service/node_modules/mongoose/lib/query.js:4447:28)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async exports.getReservation (/home/arwa/hopTrip/hometrip-microservices/services/booking-service/src/controllers/bookingController.js:211:25)
+2025-11-20 16:48:32 [ERROR] Authentication error:
+2025-11-20 16:48:32 [ERROR] Authentication error:

@@ -1,0 +1,37 @@
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-00.hxvjyu7.mongodb.net","service":"gift-card-service","timestamp":"2025-11-20 15:23:23"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-02.hxvjyu7.mongodb.net","service":"gift-card-service","timestamp":"2025-11-20 15:23:23"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"gift-card-service","timestamp":"2025-11-20 15:23:23"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"gift-card-service","timestamp":"2025-11-20 15:23:23"}
+{"level":"info","message":"✅ Subscribed to pattern: payment.succeeded","service":"gift-card-service","timestamp":"2025-11-20 15:23:23"}
+{"level":"info","message":"✅ gift-card-service running on port 4013","service":"gift-card-service","timestamp":"2025-11-20 15:23:23"}
+{"level":"info","message":"📚 API Docs: http://localhost:4013/api-docs","service":"gift-card-service","timestamp":"2025-11-20 15:23:23"}
+{"level":"info","message":"✅ Subscribed to pattern: payment.succeeded","service":"gift-card-service","timestamp":"2025-11-20 15:23:23"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-01.hxvjyu7.mongodb.net","service":"gift-card-service","timestamp":"2025-11-20 15:23:53"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"gift-card-service","timestamp":"2025-11-20 15:23:53"}
+{"level":"info","message":"✅ Subscribed to pattern: payment.succeeded","service":"gift-card-service","timestamp":"2025-11-20 15:23:53"}
+{"level":"info","message":"✅ gift-card-service running on port 4013","service":"gift-card-service","timestamp":"2025-11-20 15:23:53"}
+{"level":"info","message":"📚 API Docs: http://localhost:4013/api-docs","service":"gift-card-service","timestamp":"2025-11-20 15:23:53"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-00.hxvjyu7.mongodb.net","service":"gift-card-service","timestamp":"2025-11-20 17:43:39"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"gift-card-service","timestamp":"2025-11-20 17:43:39"}
+{"level":"info","message":"✅ Subscribed to pattern: payment.succeeded","service":"gift-card-service","timestamp":"2025-11-20 17:43:39"}
+{"level":"info","message":"✅ gift-card-service running on port 4013","service":"gift-card-service","timestamp":"2025-11-20 17:43:39"}
+{"level":"info","message":"📚 API Docs: http://localhost:4013/api-docs","service":"gift-card-service","timestamp":"2025-11-20 17:43:39"}
+{"level":"info","message":"SIGTERM received. Closing server gracefully...","service":"gift-card-service","timestamp":"2025-11-20 18:09:22"}
+{"level":"warn","message":"MongoDB disconnected. Attempting to reconnect...","service":"gift-card-service","timestamp":"2025-11-20 18:09:22"}
+{"level":"warn","message":"RabbitMQ connection closed. Reconnecting...","service":"gift-card-service","timestamp":"2025-11-20 18:09:22"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-02.hxvjyu7.mongodb.net","service":"gift-card-service","timestamp":"2025-11-20 18:12:26"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"gift-card-service","timestamp":"2025-11-20 18:12:26"}
+{"level":"info","message":"✅ Subscribed to pattern: payment.succeeded","service":"gift-card-service","timestamp":"2025-11-20 18:12:26"}
+{"level":"info","message":"✅ gift-card-service running on port 4013","service":"gift-card-service","timestamp":"2025-11-20 18:12:26"}
+{"level":"info","message":"📚 API Docs: http://localhost:4013/api-docs","service":"gift-card-service","timestamp":"2025-11-20 18:12:26"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-00.hxvjyu7.mongodb.net","service":"gift-card-service","timestamp":"2025-11-20 18:29:12"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"gift-card-service","timestamp":"2025-11-20 18:29:12"}
+{"level":"info","message":"✅ Subscribed to pattern: payment.succeeded","service":"gift-card-service","timestamp":"2025-11-20 18:29:12"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-00.hxvjyu7.mongodb.net","service":"gift-card-service","timestamp":"2025-11-20 18:29:40"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"gift-card-service","timestamp":"2025-11-20 18:29:40"}
+{"level":"info","message":"✅ Subscribed to pattern: payment.succeeded","service":"gift-card-service","timestamp":"2025-11-20 18:29:40"}
+{"level":"info","message":"✅ gift-card-service running on port 4013","service":"gift-card-service","timestamp":"2025-11-20 18:29:40"}
+{"level":"info","message":"📚 API Docs: http://localhost:4013/api-docs","service":"gift-card-service","timestamp":"2025-11-20 18:29:40"}
+{"level":"info","message":"SIGTERM received. Closing server gracefully...","service":"gift-card-service","timestamp":"2025-11-20 18:52:21"}
+{"level":"warn","message":"MongoDB disconnected. Attempting to reconnect...","service":"gift-card-service","timestamp":"2025-11-20 18:52:21"}
+{"level":"warn","message":"RabbitMQ connection closed. Reconnecting...","service":"gift-card-service","timestamp":"2025-11-20 18:52:21"}
