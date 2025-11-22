@@ -7,6 +7,7 @@ const { eventBus } = require("./utils/eventBus");
 
 const messageRoutes = require("./routes/messages");
 const conversationRoutes = require("./routes/conversations");
+const notificationRoutes = require("./modules/notifications/notifications");
 
 
 // Swagger Documentation
@@ -37,6 +38,7 @@ app.get("/health", (req, res) => {
 
 app.use("/api/messages", messageRoutes);
 app.use("/api/conversations", conversationRoutes);
+app.use("/api/notifications", notificationRoutes);
 
 app.use((err, req, res, next) => {
   logger.error(`Error: ${err.message}`);

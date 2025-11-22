@@ -26,3 +26,11 @@
 {"level":"warn","message":"MongoDB disconnected. Attempting to reconnect...","service":"two-factor-service","timestamp":"2025-11-20 18:09:33"}
 {"level":"info","message":"MongoDB connection closed","service":"two-factor-service","timestamp":"2025-11-20 18:09:33"}
 {"level":"warn","message":"RabbitMQ connection closed. Reconnecting...","service":"two-factor-service","timestamp":"2025-11-20 18:09:33"}
+{"level":"info","message":"✅ MongoDB connected: ac-m1ddtq7-shard-00-01.hxvjyu7.mongodb.net","service":"two-factor-service","timestamp":"2025-11-20 20:21:57"}
+{"level":"info","message":"✅ Connected to RabbitMQ","service":"two-factor-service","timestamp":"2025-11-20 20:21:57"}
+{"level":"info","message":"✅ Subscribed to pattern: booking.completed","service":"two-factor-service","timestamp":"2025-11-20 20:21:57"}
+{"level":"info","message":"✅ Subscribed to pattern: user.deleted","service":"two-factor-service","timestamp":"2025-11-20 20:21:57"}
+{"level":"info","message":"✅ two-factor-service running on port 4018","service":"two-factor-service","timestamp":"2025-11-20 20:21:57"}
+{"level":"info","message":"📚 API Docs: http://localhost:4018/api-docs","service":"two-factor-service","timestamp":"2025-11-20 20:21:57"}
+{"level":"info","message":"🏥 Health check: http://localhost:4018/health","service":"two-factor-service","timestamp":"2025-11-20 20:21:57"}
+{"level":"info","message":"SIGTERM received. Closing server gracefully...","service":"two-factor-service","timestamp":"2025-11-20 22:15:06"}

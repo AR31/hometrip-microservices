@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const notificationController = require('../controllers/notificationController');
-const { auth } = require('../middleware/auth');
+const notificationController = require('./notificationController');
+const auth = require('../../middleware/auth');
 
 /**
  * GET /api/notifications
@@ -36,9 +36,11 @@ router.put('/:id/unread', auth, notificationController.markAsUnread);
 
 /**
  * PUT /api/notifications/mark-all-read
+ * PUT /api/notifications/read-all (alias)
  * Marquer toutes les notifications comme lues
  */
 router.put('/mark-all-read', auth, notificationController.markAllAsRead);
+router.put('/read-all', auth, notificationController.markAllAsRead);
 
 /**
  * PUT /api/notifications/:id/archive

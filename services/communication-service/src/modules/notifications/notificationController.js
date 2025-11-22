@@ -1,4 +1,4 @@
-const Notification = require('../models/Notification');
+const Notification = require('../../models/Notification');
 const {
   sendUserConfirmationEmail,
   sendNewReservationRequestEmail,
@@ -8,15 +8,15 @@ const {
   sendRefundConfirmationEmail,
   sendNewMessageEmail,
   sendReviewReceivedEmail,
-} = require('../services/emailService');
+} = require('../../services/emailService');
 const {
   sendVerificationCodeSMS,
   sendReservationConfirmationSMS,
   sendCheckInReminderSMS,
   sendNewMessageSMS,
   sendPaymentFailedSMS,
-} = require('../services/smsService');
-const logger = require('../utils/logger');
+} = require('../../services/smsService');
+const logger = require('../../utils/logger');
 
 /**
  * GET /api/notifications

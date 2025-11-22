@@ -3,7 +3,7 @@ const logger = require("../utils/logger");
 
 const connectDB = async () => {
   try {
-    const mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/hometrip-messages";
+    const mongoUri = process.env.MONGODB_URI || "mongodb+srv://arwakhlifi31:bjR7XvPaL3savRmt@cluster0.hxvjyu7.mongodb.net/communication_db?retryWrites=true&w=majority&appName=Cluster0";
 
     await mongoose.connect(mongoUri, {
       useNewUrlParser: true,
@@ -12,7 +12,7 @@ const connectDB = async () => {
       w: "majority"
     });
 
-    logger.info(`MongoDB connected to ${mongoUri}`);
+    logger.info(`MongoDB connected to communication_db`);
 
     mongoose.connection.on("disconnected", () => {
       logger.warn("MongoDB disconnected");
@@ -25,7 +25,8 @@ const connectDB = async () => {
     return mongoose.connection;
   } catch (error) {
     logger.error(`MongoDB connection failed: ${error.message}`);
-    process.exit(1);
+    logger.warn('Service will continue without database connection');
+    return null;
   }
 };
 
